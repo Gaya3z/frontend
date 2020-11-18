@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from '@material-ui/core/styles'
+import GlobalStyle from './globalStyles';
+import { theme } from './theme'
+import { Home, Login, Signup, Catalog } from './views';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 function App() {
+  require('typeface-nunito')
+  require('typeface-skranji')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme = {theme}>
+      <GlobalStyle />
+      <Router>
+        <Route exact path = "/">
+        <Home />
+        </Route>  
+        <Route path = "/signup" >
+          <Signup />
+        </Route>
+        <Route path = "/login">
+        <Login />
+        </Route>
+        <Route path = "/catalog">
+          <Catalog />
+        </Route>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 

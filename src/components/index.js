@@ -1,0 +1,12 @@
+export { default as Btn } from './Button/Btn'
+export { default as Navbar } from './Navbar/Navbar'
+export { default as HeroSection } from './HeroSection/HeroSection';
+export { default as AboutSection } from './AboutSection/AboutSection'
+export { default as Cards } from './Cards/Cards'
+export { default as Subjects } from './Subjects/Subjects'
+export { default as Newsletter } from './Newsletter/Newsletter'
+export { default as TouCourses } from './TopCourses/TopCourses'
+export { default as Signup } from './Signup/Signup'
+export { default as Login } from './Signup/Login'
+export { default as Catalog } from './Catalog/Catalog'
+export { default as TopCourses } from './TopCourses/TopCourses'
