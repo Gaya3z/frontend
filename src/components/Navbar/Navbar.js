@@ -187,7 +187,8 @@ export default function Navbar(props) {
               ref={anchorRef}
               aria-controls={open ? 'menu-list-grow' : undefined}
               aria-haspopup="true"
-              onClick={handleToggle}>
+              onClick={handleToggle}
+              onMouseOver = {handleToggle}>
                 Courses
                 </Link>
               </MenuItem>
