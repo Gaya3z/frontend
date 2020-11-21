@@ -19,13 +19,13 @@ export const Title = styled.h1`
   font-weight: bold;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
-  margin-bottom: 20px;
 `
 
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
   max-width: 1300px;
+  margin-top: 100px ;
   margin-right: auto;
   margin-left: auto;
   padding-right: 50px;

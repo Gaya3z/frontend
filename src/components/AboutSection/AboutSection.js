@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../../globalStyles';
+/* import { Container } from '../../globalStyles'; */
 import {
   AboutSec,
   AboutRow,
@@ -17,7 +17,7 @@ function AboutSection() {
   return (
     <>
       <AboutSec>
-        <Container>
+        <>
           <AboutRow imgStart>
             <AboutColumn>
               <TextWrapper>
@@ -45,7 +45,7 @@ function AboutSection() {
               </ImgWrapper>
             </AboutColumn>
           </AboutRow>
-        </Container>
+        </>
       </AboutSec>
     </>
   );

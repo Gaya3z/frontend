@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Button } from '../../globalStyles';
+import { Button , Container} from '../../globalStyles';
 
-export const AboutSec = styled.div`
+
+export const AboutSec = styled(Container)`
   color: var(--white);
-  padding: 160px 0;
+  padding: 50px 50px;
   background: var(--white);
+  max-height : fit-content;
 `;
 
 export const AboutRow = styled.div`
@@ -43,6 +45,10 @@ export const ImgWrapper = styled.div`
   max-width: 700px;
   display: flex;
   justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
+  @media screen and (max-width : 768px){
+    max-width : 100vw;
+    max-height : 100vh;
+  }
 `;
 
 export const Img = styled.img`

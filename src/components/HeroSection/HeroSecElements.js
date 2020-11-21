@@ -31,7 +31,7 @@ export const SearchBar = styled.input`
     font-size: 16px;
     margin-bottom: 25px;
     border: 0.5px solid var(--primary);
-    filter: drop-shadow(10px 10px 40px rgba(0, 0, 0, 0.30));
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
     @media screen and (max-width: 960px){
         width: 80%;
         height: auto;

@@ -12,7 +12,6 @@ export const CatalogSection = styled.div`
 export const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 0 auto;
   @media screen and (max-width: 768px) {
     margin: 0 30px;
@@ -23,7 +22,8 @@ export const ListWrapper = styled.div`
 
 export const ListContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction : row ;
+  align-items : flex-start;
   margin-left : 8%;
   @media screen and (max-width: 768px) {
     flex-direction: column;

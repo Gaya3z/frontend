@@ -12,7 +12,8 @@ export const Subtext = styled.p`
   color : var(--grey);
 `
 export const SubjectContainer = styled(Container)`
-  height : 750px;
+  height : fit-content;
+  padding : 20px;
   ${Container}
 `
 

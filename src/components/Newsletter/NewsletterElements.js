@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { Button } from '../../globalStyles'
 
-export const NewsletterSec = styled.div`
-  margin-top : -10% ;
+export const NewsletterSec = styled.div`  
   color: var(--white);
-  padding: 80px 0;
   background: var(--white);
+  height : fit-content;
+  padding : 25px;
+  align-items  :center;
+  justify-content : center;
+  flex-direction : column;
 `
 export const NewsletterBox = styled.div`
   background: #4B4E54;
@@ -35,12 +38,12 @@ export const NewsletterText = styled.p`
 export const NewsletterWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   @media screen and (max-width: 768px) {
     margin: 0 30px;
     flex-direction: column;
-    align-items: center;
   }
 `;
 
@@ -80,7 +83,6 @@ export const NewsletterContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
 `;
 

@@ -134,14 +134,6 @@ export default function Navbar(props) {
     setOpen(false);
   };
 
-  
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -204,7 +196,6 @@ export default function Navbar(props) {
                 className = {classes.paper}
                 autoFocusItem={open}
                 id="menu-list-grow" 
-                onKeyDown={handleListKeyDown} 
                 >
                 <MenuItem 
                 className = {classes.menuhover} 
@@ -271,6 +262,9 @@ export default function Navbar(props) {
                 className = {classes.menuhover} 
                 onClick={handleClose}>
                   Education and Teaching
+                  </MenuItem>
+                  <MenuItem>
+                  <Link to = "/catalog">View Catalog</Link>
                   </MenuItem>
                   </MenuList>
                 </ClickAwayListener>

@@ -1,19 +1,52 @@
-import { FaRegShareSquare } from 'react-icons/fa';
-import { GiArcheryTarget } from 'react-icons/gi';
-import { VscTelescope } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import {GiSandsOfTime} from 'react-icons/gi'
+import {FaRegEye} from 'react-icons/fa'
+import {FaStar} from 'react-icons/fa'
+
+export const Rating = styled(FaStar)`
+    width : 24px;
+    height : 24px;
+    color : white;
+    padding : 3px;
+`
+export const RatingSection = styled.div`
+    width : fit-content;
+    height : fit-content;
+    border-radius : 5px;
+    background : #afafaf;
+    box-shadow : 0px 4px 10px rgba(125, 125, 125, 0.5);
+`
+
+export const TimeIcon = styled(GiSandsOfTime)`
+    width: 18px;
+    height: 18px;
+    color : var(--primary);
+    margin-right : 3px;
+`
+
+export const EyeIcon = styled(FaRegEye)`
+    width : 18px;
+    height : 15px;
+    color : var(--primary);
+    margin-right : 5px;
+`
+export const Action = styled.div`
+    width : 200px;
+    height : fit-content;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
+`
 
 export const CardSection = styled.div`
+  padding: 0 0 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background: var(--white);
-  margin-bottom : 5vh;
-  height : fit-content;
-  @media screen and (max-width : 768px){
-  }
+  align-items : center; 
 `;
 
 export const CardWrapper = styled.div`
@@ -89,17 +122,3 @@ export const CardTitle = styled.h3`
   font-size: 20px;
   color: #000;
 `;
-
-export const Telescope = styled(VscTelescope)`
-    width: 32px;
-    height: 32px;
-`
-export const Target = styled(GiArcheryTarget)`
-    width: 32px;
-    height: 32px;
-`
-
-export const Share = styled(FaRegShareSquare)`
-    width: 28px;
-    height: 28px;
-`
