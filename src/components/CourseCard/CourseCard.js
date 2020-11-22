@@ -44,8 +44,15 @@ const useStyles = makeStyles((theme) => ({
       fontSize : '14px',
       '&:hover' : {
         color : '#5C0090',
-      }
-    }
+      },
+    },
+    title : {
+      color : "#000",
+      textDecoration : "none",
+      '&:hover' : {
+        color : "#5C0090"
+      },
+    },
   }));  
 
 export default function CourseCard() {
@@ -65,9 +72,11 @@ export default function CourseCard() {
           width = "200px"
         />
         <CardContent className = {classes.content}>
+          <Link className = {classes.title} to = "/product">
           <Typography gutterBottom variant="h5" component="h2">
             Introduction to Data Visualization
           </Typography>
+          </Link>
           <Typography variant="body2" color="textSecondary" component="p">
            University of California, Davis
           </Typography>
@@ -79,7 +88,7 @@ export default function CourseCard() {
             4-6 hours a week / 4 weeks long
           </Typography>
             <EyeIcon />
-            <Link className = {classes.link}>
+            <Link className = {classes.link} to = "/product">
               Course Preview
               </Link>
         </CardContent>
