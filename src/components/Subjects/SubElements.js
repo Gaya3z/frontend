@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Button, Container } from '../../globalStyles';
 
 export const SubjectScroll = styled(Container)`
+  margin-top : 0;
   height: 160px;
   ${Container}
 `;
@@ -12,6 +13,7 @@ export const Subtext = styled.p`
   color : var(--grey);
 `
 export const SubjectContainer = styled(Container)`
+  margin-top : 0;
   height : fit-content;
   padding : 20px;
   ${Container}

@@ -51,7 +51,7 @@ function Footer() {
             </FooterSubText>
           </FooterLinkItems>
           <FooterLinkItems>
-            <FooterLink to='/'>About Us</FooterLink>
+            <FooterLink to='/about'>About Us</FooterLink>
             <FooterLink to='/'>Blogs</FooterLink>
             <FooterLink to='/'>FAQs</FooterLink>
             <FooterLink to='/'>Contact Us</FooterLink>
@@ -59,11 +59,11 @@ function Footer() {
           </FooterLinkItems>
           <FooterLinkItems>
             <FooterLinkTitle>Search Courses By</FooterLinkTitle>
-            <FooterLink to='/'>Subjects</FooterLink>
-            <FooterLink to='/'>Providers</FooterLink>
-            <FooterLink to='/'>Languages</FooterLink>
-            <FooterLink to='/'>Institutions</FooterLink>
-            <FooterLink to='/'>Universities</FooterLink>
+            <FooterLink to='/catalog'>Subjects</FooterLink>
+            <FooterLink to='/provider'>Providers</FooterLink>
+            <FooterLink to='/language'>Languages</FooterLink>
+            <FooterLink to='/university'>Institutions</FooterLink>
+            <FooterLink to='/university'>Universities</FooterLink>
           </FooterLinkItems>
           <FooterLinkItems>
             <FooterLinkTitle>Quick Links</FooterLinkTitle>

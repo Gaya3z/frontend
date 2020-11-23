@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@material-ui/core/styles'
 import GlobalStyle from './globalStyles';
 import { theme } from './theme'
-import { Home, Login, Signup, Catalog, Course, Product } from './views';
+import { Home, Login, Signup, Catalog, Course, Product, University, Provider, Language, About} from './views';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
@@ -29,6 +29,18 @@ function App() {
         </Route>
         <Route path = "/product">
           <Product />
+        </Route>
+        <Route path = "/university">
+          <University />
+        </Route>
+        <Route path = "/provider">
+          <Provider />
+        </Route>
+        <Route path = "/language">
+          <Language />
+        </Route>
+        <Route path = "/about">
+          <About />
         </Route>
         <Footer />
       </Router>

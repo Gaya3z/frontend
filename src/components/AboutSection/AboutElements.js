@@ -3,6 +3,7 @@ import { Button , Container} from '../../globalStyles';
 
 
 export const AboutSec = styled(Container)`
+  margin-top : 0;
   color: var(--white);
   padding: 50px 50px;
   background: var(--white);
