@@ -22,7 +22,6 @@ export const CardWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   @media screen and (max-width: 768px) {
-    margin: 0 30px;
     flex-direction: column;
     align-items: center;
   }

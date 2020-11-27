@@ -13,7 +13,7 @@ const Styles = makeStyles((theme) => ({
         padding : 25,
         marginBottom : 50,
         lineHeight : 2,
-        maxWidth : '60vw',
+        maxWidth : '100vw',
         margin : 'auto' ,
     },
 }))

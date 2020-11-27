@@ -30,8 +30,12 @@ const useStyles = makeStyles((theme) => ({
     typography : {
         textAlign : "center",
         fontSize : 18,
-        maxWidth : "80%",
+        width : "80%",
         margin : 50,
+        [theme.breakpoints.down('sm')] : {
+            width : "100%",
+            margin : 25,
+        },
     },
     title : {
         fontWeight : 800,

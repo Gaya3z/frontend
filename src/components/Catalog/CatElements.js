@@ -14,7 +14,6 @@ export const ListWrapper = styled.div`
   flex-direction: column;
   margin: 0 auto;
   @media screen and (max-width: 768px) {
-    margin: 0 30px;
     flex-direction: column;
     align-items: center;
   }
@@ -30,8 +29,8 @@ export const ListContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom : 25px;
     margin : 0;
+    margin-top : 50px;
   }
 `;
 
@@ -45,6 +44,9 @@ export const List = styled.div`
   text-decoration: none;
   padding : 50px;
   background : whitesmoke;
+  @media screen and (max-width : 768px){
+    padding : 10px 50px;
+  }
 `;
 
 export const Topic = styled.p`

@@ -27,6 +27,9 @@ const Styles = makeStyles((theme) => ({
       alignItems : 'center',
       justifyContent : "left" ,
       margin : 20,
+      [theme.breakpoints.down('sm')] : {
+        flexDirection : "column",
+      },    
     },
 }))
 

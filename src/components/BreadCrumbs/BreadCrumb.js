@@ -25,7 +25,6 @@ export default function BreadCrumb() {
         <Link className = {classes.link} to="/catalog">
             Course Name
         </Link>
-        <Typography color="#777">Sub-Course Name</Typography>
         </Breadcrumbs>
         </>
     )
