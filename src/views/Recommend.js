@@ -1,11 +1,8 @@
 import { Container, Title } from '../globalStyles'
 import React from 'react'
-import { Navbar , CourseCard, CourseMenu, Btn } from '../components'
+import { Navbar , CourseCard , Btn} from '../components'
 import {  Typography } from '@material-ui/core'
-import { SearchBar } from '../components/HeroSection/HeroSecElements'
 import {Link} from 'react-router-dom'
-import clsx from 'clsx'
-import StyledCheckbox from '../components/Signup/StyledCheckbox'
 import { Styles } from '../assets/jss/Styles'
 
 function Recommend() {

@@ -20,7 +20,8 @@ import { Home,
   Profile,
   CustomizePage,
   Customize,
-  Recommend} from './views';
+  Recommend,
+  TopCourses} from './views';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
@@ -90,6 +91,9 @@ function App() {
       </Route>
       <Route path = "/recommendedcourses">
         <Recommend />
+      </Route>
+      <Route path = "/topcourses">
+        <TopCourses />
       </Route>
         <Footer />
       </Router>
