@@ -57,7 +57,6 @@ export const Button = styled.button`
     color: ${({ white }) => (white ? 'var(--primary)' : 'var(--white)')};
   }
   @media screen and (max-width: 768px) {
-    width: 80%;
   }
 `;
 

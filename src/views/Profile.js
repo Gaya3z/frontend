@@ -68,6 +68,12 @@ const useStyles = makeStyles((theme) => ({
           display: 'none',
         },
       },
+      coursecard : {
+          margin : 20,
+          [theme.breakpoints.down('sm')] : {
+              width : "90vw",
+          },
+      },
 }))
 
 export default function Profile() {
@@ -101,7 +107,7 @@ export default function Profile() {
             <Typography className = {classes.recommendTitle}>
                 Courses Recommended for you :
             </Typography>
-            <div style = {{ margin : 20 }}>
+            <div className = {classes.coursecard}>
                 <CourseCard />
             </div>
             </div>
