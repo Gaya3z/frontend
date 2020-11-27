@@ -4,6 +4,7 @@ import HorizontalScroll from './HorizontalScroll';
 import './item.css';
 import {SubjectContainer, SubjectButton} from './SubElements';
 import { SubjectsCarousel} from './SubjectsCarousel'
+import {Link} from 'react-router-dom'
 
 function Subjects() {
     return (
@@ -12,7 +13,9 @@ function Subjects() {
         <Title> Subjects </Title>
         <HorizontalScroll  />
         <SubjectsCarousel />
+        <Link to = "/catalog">
         <SubjectButton> Browse all subjects</SubjectButton>
+        </Link>
         </SubjectContainer>
         </>
     )
