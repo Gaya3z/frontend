@@ -2,7 +2,7 @@ import { Button, Title } from '../../globalStyles'
 import React , {Component} from 'react'
 import { CheckBoxArea, Insert, Label, SignupBox, SignupContainer } from './SignupElements'
 import StyledCheckbox from './StyledCheckbox'
-
+import {Link} from 'react-router-dom'
 
 export default class Login extends Component {
     render(){
@@ -21,9 +21,11 @@ export default class Login extends Component {
                         Remember me
                     </Label>
                     </CheckBoxArea>
-                    <Button to = "/"> 
+                    <Link to ="/profile">
+                    <Button> 
                     Login
-                </Button>
+                    </Button>
+                    </Link>
                 </SignupBox>
             </SignupContainer>  
             </>
