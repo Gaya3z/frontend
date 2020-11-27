@@ -47,7 +47,7 @@ export const ImgWrapper = styled.div`
   display: flex;
   justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
   @media screen and (max-width : 768px){
-    max-width : 100vw;
+    max-width : 1000vw;
     max-height : 100vh;
   }
 `;
@@ -61,8 +61,8 @@ export const Img = styled.img`
   max-height: 500px;
   @media screen and (max-width : 768px){
     padding : 25px;
-    max-height: 450px;
-    max-width : 500px;
+    max-height: 350px;
+    max-width : 400px;
   }
 `;
 

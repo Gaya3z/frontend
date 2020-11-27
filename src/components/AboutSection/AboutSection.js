@@ -32,7 +32,7 @@ function AboutSection() {
                     Explore Catalogue
                   </AboutSecButton>
                 </Link>
-                <Link to='/'>
+                <Link to='/blogs'>
                   <AboutSecButton blue bigger >
                     Read Blog
                   </AboutSecButton>

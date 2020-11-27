@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
       display : "flex",
       borderRadius : 15,
       [theme.breakpoints.down('sm')] : {
-        width : '80vw',
         height : 'fit-content',
         flexDirection : "column",
         alignItems : "center",
+        width : "90%",
       },
     },
     cardmedia : {

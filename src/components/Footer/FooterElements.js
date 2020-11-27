@@ -9,6 +9,9 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    width : 100vw;
+  }
 `;
 
 export const FooterSubscription = styled.section`
@@ -95,9 +98,11 @@ export const FooterLinkItems = styled.div`
   }
 `;
 
-export const FooterLinkTitle = styled.h2`
+export const FooterLinkTitle = styled(Link)`
   font-size : 16px;
   margin-bottom: 16px;
+  text-decoration  : none;
+  color : white;
 `;
 
 export const FooterLink = styled(Link)`

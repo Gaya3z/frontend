@@ -5,7 +5,6 @@ import './item.css';
 import {SubjectContainer, SubjectButton} from './SubElements';
 import { SubjectsCarousel} from './SubjectsCarousel'
 
-
 function Subjects() {
     return (
         <>  

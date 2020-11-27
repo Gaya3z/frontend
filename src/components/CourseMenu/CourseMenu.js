@@ -1,9 +1,10 @@
-import { Button, ButtonGroup, Popover, makeStyles, Typography } from '@material-ui/core'
+import { Button, ButtonGroup, Popover, makeStyles, Typography, Menu, MenuItem, IconButton } from '@material-ui/core'
 import React from 'react'
 import BreadCrumb from '../BreadCrumbs/BreadCrumb'
 import Btn from '../Button/Btn'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-
+import clsx from 'clsx'
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
     root : {
@@ -53,6 +54,21 @@ const useStyles = makeStyles((theme) => ({
     typography: {
         padding: theme.spacing(2),
       },
+      grow: {
+        flexGrow: 1,
+      },
+      sectionDesktop: {
+        display: 'none',
+        [theme.breakpoints.up('md')]: {
+          display: 'flex',
+        },
+      },
+      sectionMobile: {
+        display: 'flex',
+        [theme.breakpoints.up('md')]: {
+          display: 'none',
+        },
+      },
 }))
 
 function CourseMenu() {
@@ -69,7 +85,10 @@ function CourseMenu() {
   
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
-    
+
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (<></>);
 
     return (
         <>
@@ -80,7 +99,8 @@ function CourseMenu() {
             <Btn>Share List</Btn>
         </div>
         </div>
-        <div className = {classes.root}>
+        <div className = { classes.grow }>
+        <div className = {clsx(classes.root, classes.sectionDesktop)}>
         <ButtonGroup 
         size="large" 
         variant="contained" 
@@ -134,7 +154,8 @@ function CourseMenu() {
         className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
         Learning Type
         </Button>
-      </ButtonGroup>
+      </ButtonGroup> 
+        </div>
         </div>
         </>
     )

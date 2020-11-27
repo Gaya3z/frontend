@@ -30,6 +30,7 @@ export const Container = styled.div`
   margin-top : 100px;
   padding-right: 50px;
   padding-left: 50px;
+  color : #4B4E54;
   @media screen and (max-width: 768px) {
     padding-right: 30px;
     padding-left: 30px;

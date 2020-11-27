@@ -1,7 +1,26 @@
 import { ThemeProvider } from '@material-ui/core/styles'
 import GlobalStyle from './globalStyles';
 import { theme } from './theme'
-import { Home, Login, Signup, Catalog, Course, Product, University, Provider, Language, About} from './views';
+import { Home, 
+  Login, 
+  Signup, 
+  Catalog, 
+  Course, 
+  Product, 
+  University, 
+  Provider, 
+  Language, 
+  About, 
+  Contact, 
+  Faq, 
+  Terms, 
+  Blogs, 
+  News,
+  BlogPost,
+  Profile,
+  CustomizePage,
+  Customize,
+  Recommend} from './views';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
@@ -42,6 +61,36 @@ function App() {
         <Route path = "/about">
           <About />
         </Route>
+        <Route path = "/contactus">
+        <Contact />
+      </Route>
+      <Route path = "/faq">
+        <Faq />
+      </Route>
+      <Route path = "/termsandconditions">
+        <Terms />
+      </Route>
+      <Route path = "/blogs">
+        <Blogs />
+      </Route>
+      <Route path = "/newsandarticles">
+        <News />
+      </Route>
+      <Route path = "/blogpost">
+        <BlogPost />
+      </Route>
+      <Route path = "/profile">
+        <Profile />
+      </Route>
+      <Route path = "/customizepage">
+        <CustomizePage />
+      </Route>
+      <Route path = "/customizenow">
+        <Customize />
+      </Route>
+      <Route path = "/recommendedcourses">
+        <Recommend />
+      </Route>
         <Footer />
       </Router>
     </ThemeProvider>

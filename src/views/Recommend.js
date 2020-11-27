@@ -8,47 +8,31 @@ import clsx from 'clsx'
 import StyledCheckbox from '../components/Signup/StyledCheckbox'
 import { Styles } from '../assets/jss/Styles'
 
-export default function CourseList() {
+function Recommend() {
     const classes = Styles()
     return (
         <>
         <Navbar />
         <Container className = {classes.container} >
-        <Title> Course Name </Title>
+        <Title> Learning Path Title </Title>
         <Typography className = {classes.typography}>
         Lorem ipsum dolor sit amet, consectetur 
         adipiscing elit. Donec lobortis non urna 
         vel feugiat. Sed lectus ante,
         placerat et nibh vitae, faucibus dapibus justo.
         </Typography>
-        <div className = {classes.searcharea}>
-        <SearchBar placeholder = "Search Thousands of Courses"/>
-        <Btn>Search</Btn>
-        </div>
-        <CourseMenu />
-        <div className = { classes.certificate }>
-        <Typography style = {{ fontWeight : 600}}>
-            With certifcates
-        <StyledCheckbox />
-        </Typography>
-        </div>
         <div className = {classes.coursecard}>
                 <div className = {classes.menulist}>
                 <Typography 
                 class = {classes.link}
                 style = {{ fontWeight : '600' , color : "#000" }}>
-                Related courses
+                Required courses
                 </Typography>
                 <Link className = {classes.link} >Data Visualization</Link>
                 <Link className = {classes.link} >Data Analysis</Link>
                 <Link className = {classes.link} >Data Mining</Link>
                 <Link className = {classes.link} >Big Data</Link>
                 <Link className = {classes.link} >Bio Informatics</Link>
-                <Link 
-                className = {clsx(classes.cataloglink , classes.link)} 
-                to = "/catalog">
-                View Catalog
-                </Link>
                 </div>
             <div>
             {[...Array(10)].map(coursecard => {
@@ -61,3 +45,4 @@ export default function CourseList() {
     )
 }
 
+export default Recommend

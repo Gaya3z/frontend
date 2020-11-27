@@ -17,13 +17,13 @@ import newsletter from '.../../../public/Newsletter.svg'
 function Newsletter() {
     return (
         <NewsletterSec>
-        <Title>
-            Get all the latest news and articles
-        </Title>
         <NewsletterContainer>
         <AboutRow>
         <AboutColumn>
         <NewsletterWrapper>
+        <Title>
+            Get all the latest news and articles
+        </Title>
             <NewsletterBox>
                 <TitleWrapper>
                 <img src = {newsletter} alt = 'Coursenator Newsletter' />

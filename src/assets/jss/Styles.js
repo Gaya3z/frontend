@@ -23,6 +23,9 @@ export const Styles = makeStyles((theme) => ({
     coursecard : {
         display : 'flex',
         flexDirection  : "row",
+        [theme.breakpoints.down('500')] : {
+            flexDirection : "column",
+        },
     },
     menulist  :{ 
         display: "flex",
@@ -31,7 +34,11 @@ export const Styles = makeStyles((theme) => ({
         width: "fit-content",
         boxSizing: "border-box",
         textDecoration: "none",
-        padding : 20,
+        padding : "0 20px",
+        [theme.breakpoints.down('500')] : {
+            textAlign : "center",
+            margin : "auto",
+        },
     },
     link : {
         color : "#777",
@@ -47,12 +54,20 @@ export const Styles = makeStyles((theme) => ({
         color : 'var(--primary)',
     },
     certificate : {
-        width : "fit-content",
+        maxWidth : "fit-content",
         display : 'flex',
         flexDirection : "row",  
-        marginLeft : "77%"
+        marginLeft : "auto",
+        marginRight : "10%",
+        [theme.breakpoints.down('500')] : {
+            margin : "auto",
+        },
     },
     container : {
         marginTop : 100,
+    },
+    order : { 
+        display : "flex",
+        
     },
 }))

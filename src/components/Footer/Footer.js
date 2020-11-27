@@ -3,7 +3,7 @@ import { Button } from '../../globalStyles';
 import {
   FaFacebook,
   FaInstagram,
-  FaTwitter,
+  FaYoutube,
   FaLinkedin,
   FaTelegram
 } from 'react-icons/fa';
@@ -43,7 +43,7 @@ function Footer() {
       <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
-            <FooterLinkTitle>
+            <FooterLinkTitle to = "/">
               <img src = { coursenator } alt = "Coursenator" />
             </FooterLinkTitle>
             <FooterSubText>
@@ -52,10 +52,11 @@ function Footer() {
           </FooterLinkItems>
           <FooterLinkItems>
             <FooterLink to='/about'>About Us</FooterLink>
-            <FooterLink to='/'>Blogs</FooterLink>
-            <FooterLink to='/'>FAQs</FooterLink>
-            <FooterLink to='/'>Contact Us</FooterLink>
-            <FooterLink to='/'>Terms and Conditions</FooterLink>
+            <FooterLink to='/blogs'>Blogs</FooterLink>
+            <FooterLink to='/faq'>FAQs</FooterLink>
+            <FooterLink to='/contactus'>Contact Us</FooterLink>
+            <FooterLink to='/newsandarticles'>News and Articles</FooterLink>
+            <FooterLink to = "/termsandconditions">Terms and Conditions</FooterLink>
           </FooterLinkItems>
           <FooterLinkItems>
             <FooterLinkTitle>Search Courses By</FooterLinkTitle>
@@ -79,19 +80,19 @@ function Footer() {
       <SocialMedia>
         <SocialMediaWrap>
           <SocialIcons>
-          <SocialIconLink href='/' target='_blank' aria-label='LinkedIn'>
+          <SocialIconLink href='https://www.linkedin.com/company/e-learners/' target='_blank' aria-label='LinkedIn'>
               <FaLinkedin />
             </SocialIconLink>
-            <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
+            <SocialIconLink href='https://www.facebook.com/Courses.do1' target='_blank' aria-label='Facebook'>
               <FaFacebook />
             </SocialIconLink>
-            <SocialIconLink href='/' target='_blank' aria-label='Twitter'>
-              <FaTwitter />
+            <SocialIconLink href='https://www.youtube.com/channel/UCpcUP0NzPTZKaEnKXl1mVpg' target='_blank' aria-label='Youtube'>
+              <FaYoutube />
             </SocialIconLink>
-            <SocialIconLink href='/' target='_blank' aria-label='Instagram'>
+            <SocialIconLink href='https://www.instagram.com/e__learners/' target='_blank' aria-label='Instagram'>
               <FaInstagram />
             </SocialIconLink>
-            <SocialIconLink href='/' target='_blank' aria-label='Telegram'>
+            <SocialIconLink href='https://t.me/ElearnersFreeCourses' target='_blank' aria-label='Telegram'>
               <FaTelegram />
             </SocialIconLink>
           </SocialIcons>

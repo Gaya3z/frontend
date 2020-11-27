@@ -34,12 +34,13 @@ nav : {
     justifyContent : "center",
     boxShadow: '0 3px 5px 2px rgba(0, 0, 0, .1)',
     height: 80,
-    width : "100%"
     },
 toolbar : {
     marginLeft : "10%",
     marginRight : "10%",
-    [theme.breakpoints.down('sm')]: {
+    maxWidth : 1300,
+    width : "100%",
+    [theme.breakpoints.down('md')]: {
         marginLeft : "0%",
         marginRight : "0%"
       },
@@ -54,6 +55,7 @@ toolbar : {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'block',
+
     },
   },
   sectionDesktop: {
@@ -83,6 +85,10 @@ toolbar : {
     '&:hover' : {
       color : '#5C0090'
     }
+  },
+  menulink : {
+    textDecoration : "none",
+    color : "inherit",
   },
 }));
 
@@ -149,10 +155,10 @@ export default function Navbar(props) {
     <Link className = {classes.link} to = "/catalog">Courses</Link>
     </MenuItem>
     <MenuItem>
-    <Link className = {classes.link} to = "/">Tracks</Link>
+    <Link className = {classes.link} to = "/customizepage">Tracks</Link>
     </MenuItem>
     <MenuItem>
-    <Link className = {classes.link} to = "/">Blog</Link>
+    <Link className = {classes.link} to = "/blogs">Blog</Link>
     </MenuItem>
     <MenuItem>
     <Link className = {classes.link} to = "/login">Login</Link>
@@ -197,72 +203,84 @@ export default function Navbar(props) {
                 autoFocusItem={open}
                 id="menu-list-grow" 
                 >
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Data Science
                 </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Business
                 </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Humanities
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Art and Design
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Programming
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
-                  Personal Developement
-                  </MenuItem>
+                className = {classes.menuhover}>
+                  Personal Development
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Health and Nutrition
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Language Learning
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Computer Science
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Information Technology
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Social Science
-                  </MenuItem>
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                className = {classes.menuhover} 
-                onClick={handleClose}>
-                  Physical Science and Education
-                  </MenuItem>
+                className = {classes.menuhover}>
+                  Physical Science and Engineering
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
                 <MenuItem 
-                
-                className = {classes.menuhover} 
-                onClick={handleClose}>
+                className = {classes.menuhover}>
                   Education and Teaching
-                  </MenuItem>
+                </MenuItem>
+                </Link>
                   <MenuItem>
                   <Link to = "/catalog">View Catalog</Link>
                   </MenuItem>
@@ -273,10 +291,10 @@ export default function Navbar(props) {
           )}
         </Popper>
               <MenuItem>
-              <Link className = {classes.link} to = "/">Tracks</Link>
+              <Link className = {classes.link} to = "/customizepage">Tracks</Link>
               </MenuItem>
               <MenuItem>
-              <Link className = {classes.link} to = "/">Blogs</Link>
+              <Link className = {classes.link} to = "/blogs">Blogs</Link>
               </MenuItem>
               <MenuItem>
               <Link className = {classes.link} to = "/login">Login</Link>
