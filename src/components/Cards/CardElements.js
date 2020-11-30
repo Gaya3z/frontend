@@ -15,6 +15,7 @@ export const CardSection = styled.div`
   max-width : 100vw;
   @media screen and (max-width : 768px){
     margin : 20px;
+    flex-direction : column ;
   }
 `;
 
@@ -24,7 +25,6 @@ export const CardWrapper = styled.div`
   align-items: center;
   justify-content : center ; 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
     align-items: center;
   }
 `;
