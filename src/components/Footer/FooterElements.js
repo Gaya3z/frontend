@@ -9,9 +9,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 768px) {
-    width : 100vw;
-  }
+  width : 100vw;
 `;
 
 export const FooterSubscription = styled.section`
@@ -23,13 +21,18 @@ export const FooterSubscription = styled.section`
   margin-bottom: 24px;
   padding: 24px;
   color: #fff;
+  @media screen and (max-width : 980px){
+  margin-bottom: 12px;
+  padding: 12px;
+  }
 `;
 
 export const FooterSubHeading = styled.p`
   margin-bottom: 24px;
   font-size: 24px;
-  @media screen and (max-width : 980 px){
+  @media screen and (max-width : 980px){
     align-items : center;
+    font-size : 20px;
   }
 `;
 
@@ -103,6 +106,9 @@ export const FooterLinkTitle = styled(Link)`
   margin-bottom: 16px;
   text-decoration  : none;
   color : white;
+  @media screen and (max-width: 1100px) {
+    font-size : 14px;
+  }
 `;
 
 export const FooterLink = styled(Link)`
@@ -157,16 +163,16 @@ export const HorizontalLine = styled.div`
   background : #fff;
   color : #fff;
   border: 0.2px solid rgba(255, 255, 255, 0.5);
-  opacity : 0.2 ;
-  width : 300px;  
+  opacity : 0.1 ;
+  width : 340px;  
 `
 
 export const SocialIcons = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 240px;
-  margin-left: 37%;
+  width: 280px;
+  margin-left: 35%;
   @media screen and (max-width: 1100px){
     margin-right : 37%;
   }
@@ -175,4 +181,7 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
   color: #fff;
   font-size: 32px;
+  @media screen and (max-width: 1100px){
+    font-size : 150%;
+  }
 `;

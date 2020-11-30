@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Nunito', sans-serif;
   --primary : #5C0090;
   --blue : #2D283E;
-  --grey: #777;
+  --grey: #4B4E54;
   --white: #fff;
   --black: #000;
 }
@@ -19,14 +19,16 @@ export const Title = styled.h1`
   font-weight: bold;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
+  @media screen and (max-width : 768px){
+    font-size : 30px;
+  }
 `
 
 export const Container = styled.div`
   z-index: 1;
-  width: 100%;
-  max-width: 1300px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: "100vw";
+  margin-right: 10%;
+  margin-left: 10%;
   margin-top : 100px;
   padding-right: 50px;
   padding-left: 50px;
@@ -57,6 +59,7 @@ export const Button = styled.button`
     color: ${({ white }) => (white ? 'var(--primary)' : 'var(--white)')};
   }
   @media screen and (max-width: 768px) {
+    padding: 8px 40px;
   }
 `;
 

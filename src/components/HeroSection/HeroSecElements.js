@@ -5,7 +5,7 @@ import bg from './desktopBg.png'
 export const HeroContainer = styled.div`
   background: url(${bg}) center center/cover no-repeat; 
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,6 @@ export const HeroContainer = styled.div`
   object-fit: contain;
 `
 export const HeroTitle = styled(Title)`
-  margin-top: -65px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
   color: var(--white);
   @media screen and (max-width: 960px){
@@ -33,15 +32,22 @@ export const SearchBar = styled.input`
     border: 0.5px solid var(--primary);
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
     @media screen and (max-width: 960px){
-        width: 80%;
-        height: auto;
+        width: 80vw; 
+        height : 45px;
     }
 `
 
 export const HeroBtn = styled(Button)`
-  margin-right: -43%;
+  margin-left: auto;
   @media screen and (max-width: 960px){
-    margin-right: 0;
-    width: 50%;
+    margin-left : 0px;
   }
+`
+export const HeroWrapper = styled.div`
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  justify-content : center;
+  margin-left : 15%;
+  margin-right : 15%;
 `

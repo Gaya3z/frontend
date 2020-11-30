@@ -24,6 +24,7 @@ import { Home,
   TopCourses} from './views';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   require('typeface-nunito')
@@ -32,6 +33,7 @@ function App() {
     <ThemeProvider theme = {theme}>
       <GlobalStyle />
       <Router>
+        <ScrollToTop>
         <Route exact path = "/">
         <Home />
         </Route>  
@@ -96,6 +98,7 @@ function App() {
         <TopCourses />
       </Route>
         <Footer />
+        </ScrollToTop>
       </Router>
     </ThemeProvider>
   );

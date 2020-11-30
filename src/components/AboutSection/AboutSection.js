@@ -18,7 +18,7 @@ function AboutSection() {
     <>
       <AboutSec>
         <>
-          <AboutRow imgStart>
+          <AboutRow>
             <AboutColumn>
               <TextWrapper>
                 <Text bold dropshadow>

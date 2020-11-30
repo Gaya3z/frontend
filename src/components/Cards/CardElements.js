@@ -6,13 +6,15 @@ import styled from 'styled-components';
 
 export const CardSection = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background: var(--white);
   margin-bottom : 5vh;
   height : fit-content;
+  max-width : 100vw;
   @media screen and (max-width : 768px){
+    margin : 20px;
   }
 `;
 
@@ -20,7 +22,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  justify-content : center ; 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -32,11 +34,11 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-bottom : 25px;
+      margin-top : 25px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom : 25px;
   }
 `;
 
@@ -55,10 +57,12 @@ export const Card = styled(Link)`
     transition: all 0.3s ease-out;
   }
   @media screen and (max-width: 768px) {
-    width: 90%;
     &:hover {
       transform: none;
-    }
+    };
+    width : 240px;
+    height : 240px;
+    padding : 10px;
   }
 `;
 
@@ -69,6 +73,9 @@ export const CardInfo = styled.div`
   padding: 24px;
   align-items: center;
   color: var(--grey);
+  @media screen and (max-width: 768px) {
+    padding: 5px;
+  }
 `;
 
 export const CardIcon = styled.div`
@@ -80,7 +87,7 @@ export const CardText = styled.p`
   font-size: 16px;
   margin-bottom: 24px;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 10px;
 `;
 
 export const CardTitle = styled.h3`

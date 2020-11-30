@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import { Button, Container } from '../../globalStyles'
 
-export const NewsletterSec = styled(Container)`  
+export const NewsletterSec = styled.div`  
   color: var(--white);
   background: var(--white);
-  height : fit-content;
+  display : flex;
   align-items  : center;
   justify-content : center;
   margin-top : 50px;
   margin-bottom : 50px;
+  width : 100%;
+  @media screen and (max-width : 768px) {
+    width : 90vw;
+  }
 `
 export const NewsletterBox = styled.div`
   display : flex;
@@ -25,7 +29,10 @@ export const NewsletterBox = styled.div`
   margin-top : 10px;  
   @media screen and (max-width: 768px) {
     margin-top : 20px;
-    width : 90vw;
+    height : 400px;
+    width : 400px;
+    margin : 0px;
+    margin-top : 20px;
   }
 `
 export const NewsletterTitle = styled.h2`
@@ -48,14 +55,13 @@ export const NewsletterWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width : fit-content;
+  @media screen and (max-width : 768px){
+  }
 `;
 
 export const TextWrapper = styled.div`
-  max-width : 90%;
   margin : 20px;
   margin-top : -10px;
-  width : fit-content;
 `;
 
 export const SearchBar = styled.input`
@@ -69,8 +75,7 @@ export const SearchBar = styled.input`
   margin : 20px;
   margin-top : 0;
   @media screen and (max-width: 768px) {
-    width : 75vw;
-    font-size: 10px;
+    font-size: 12px;
   }
 `
 export const EmailButton = styled(Button)`
@@ -78,12 +83,5 @@ export const EmailButton = styled(Button)`
   color : #4B4E54;
   margin : 20px;
   margin-top : 0;
-  width : "fit-content";
 `
-
-export const NewsletterContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 

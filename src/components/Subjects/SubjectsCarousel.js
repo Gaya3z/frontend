@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import arrowLeft from '.../../../public/Left.svg'
-import arrowRight from '.../../../public/Right.svg'
+import arrowRight from '.../../../public/arrowRight.svg'
+import arrowLeft from '.../../../public/arrowLeft.svg'
 import imageOne from '.../../../public/placeholder.png'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { CarouselContent } from './SubElements';
 
 export class SubjectsCarousel extends Component {
     render() { 
@@ -16,55 +17,56 @@ export class SubjectsCarousel extends Component {
         slidesToScroll: 3,
         nextArrow: <img src = {  arrowRight }  alt = " > "/>,
         prevArrow: <img src = {  arrowLeft } alt = " < "/>,
+        slidesPerRow : 1,
+        variableWidth : true,
         responsive: [
             {
               breakpoint: 1920,
               settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                dots: true
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                dots: true, 
               }
             },
             {
               breakpoint: 1080,
               settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2,
-                dots: true
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
               }
             },
             {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true
-              }
-            }
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  dots: true,
+                }
+              },
           ]
       };
     return (
         <>
             <Slider {...settings} >
-            <div>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageOne" />
-            </div>
-            <div>
+            </CarouselContent>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageTwo"  />
-            </div>
-            <div>
+            </CarouselContent>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageOne"  />
-            </div>
-            <div>
+            </CarouselContent>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageOne"  />
-            </div>
-            <div>
+            </CarouselContent>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageTwo"  />
-            </div>
-            <div>
+            </CarouselContent>
+            <CarouselContent>
                 <img src = {imageOne} alt = "imageOne"  />
-            </div>
+            </CarouselContent>
         </Slider>
         </>
     )

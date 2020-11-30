@@ -5,8 +5,9 @@ import {
   FaInstagram,
   FaYoutube,
   FaLinkedin,
-  FaTelegram
+  FaTelegram,
 } from 'react-icons/fa';
+import {SiMedium} from 'react-icons/si'
 import {
   FooterContainer,
   FooterSubscription,
@@ -94,6 +95,9 @@ function Footer() {
             </SocialIconLink>
             <SocialIconLink href='https://t.me/ElearnersFreeCourses' target='_blank' aria-label='Telegram'>
               <FaTelegram />
+            </SocialIconLink>
+            <SocialIconLink href='https://medium.com/e-learners' target='_blank' aria-label='Medium'>
+              <SiMedium />
             </SocialIconLink>
           </SocialIcons>
         </SocialMediaWrap>

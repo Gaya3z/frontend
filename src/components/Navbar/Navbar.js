@@ -16,6 +16,9 @@ import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuList from '@material-ui/core/MenuList';
+import {GoBook} from 'react-icons/go'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import {RiCloseCircleLine} from 'react-icons/ri'
 
 const useStyles = makeStyles((theme) => ({
 navsolid : {
@@ -36,10 +39,9 @@ nav : {
     height: 80,
     },
 toolbar : {
-    marginLeft : "10%",
-    marginRight : "10%",
-    maxWidth : 1300,
-    width : "100%",
+    marginLeft : "7%",
+    marginRight : "7%",
+    maxWidth : "100vw",
     [theme.breakpoints.down('md')]: {
         marginLeft : "0%",
         marginRight : "0%"
@@ -73,8 +75,12 @@ toolbar : {
   link : { 
     textDecoration : "none",
     color: "inherit",
+    fontSize  : 17,
+    fontWeight : 600,
     [theme.breakpoints.down('sm')]: {
-      color : "inherit"
+      color : "inherit",
+      fontSize  : 16,
+      fontWeight : "normal",
     },
   },
   paper: {
@@ -89,6 +95,21 @@ toolbar : {
   menulink : {
     textDecoration : "none",
     color : "inherit",
+  },
+  list: {
+    margin : 5,
+  },
+  fullList: {
+    width: '80vw',
+  },
+  coursenator : {
+    [theme.breakpoints.down('sm')] : {
+      fontSize : 24,
+    },
+  },
+  closeicon : {
+    height : 20,
+    width : 20,
   },
 }));
 
@@ -140,6 +161,119 @@ export default function Navbar(props) {
     setOpen(false);
   };
 
+  const [state, setState] = React.useState({
+    top: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <MenuList>
+      <Link to = "/course" className = {classes.menulink}>
+                <MenuItem>
+                <Link color="inherit">
+                <RiCloseCircleLine className = {classes.closeicon} />
+                </Link>
+                </MenuItem>
+            
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Data Science
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Business
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Humanities
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Art and Design
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Programming
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Personal Development
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Health and Nutrition
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Language Learning
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Computer Science
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Information Technology
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Social Science
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Physical Science and Engineering
+                </MenuItem>
+                </Link>
+                <Link to = "/course" className = {classes.menulink}>
+                <MenuItem 
+                className = {classes.menuhover}>
+                  Education and Teaching
+                </MenuItem>
+                </Link>
+                  <MenuItem>
+                  <Link to = "/catalog">View Catalog</Link>
+                  </MenuItem>
+      </MenuList>
+    </div>
+  );
+
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -151,9 +285,6 @@ export default function Navbar(props) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-    <MenuItem>
-    <Link className = {classes.link} to = "/catalog">Courses</Link>
-    </MenuItem>
     <MenuItem>
     <Link className = {classes.link} to = "/customizepage">Tracks</Link>
     </MenuItem>
@@ -174,7 +305,7 @@ export default function Navbar(props) {
       <AppBar position="fixed" className={clsx(navclasses.nav ,classes[navRef.current])} {...other}>
         <Toolbar className = {classes.toolbar}>
           <Link className = {classes.link} to = "/">
-          <Typography variant="h1" noWrap>
+          <Typography className ={classes.coursenator} variant="h1" noWrap>
             COURSENATOR
           </Typography>
           </Link>
@@ -303,7 +434,28 @@ export default function Navbar(props) {
               <Link className = {classes.link} to = "/signup">Signup</Link>
               </Btn>
           </div>
-          <div className={classes.sectionMobile}>
+          <div className={classes.sectionMobile}> 
+
+            <div>
+            {['bottom'].map((anchor) => (
+              <React.Fragment key={anchor}>
+                <IconButton 
+                onClick={toggleDrawer(anchor, true)}
+                color="inherit">
+                <GoBook />
+                </IconButton>
+                <SwipeableDrawer
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                  onOpen={toggleDrawer(anchor, true)}
+                >
+                  {list(anchor)}
+                </SwipeableDrawer>
+              </React.Fragment>
+            ))}
+          </div>
+
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}

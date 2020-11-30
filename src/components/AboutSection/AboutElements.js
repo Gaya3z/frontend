@@ -2,20 +2,28 @@ import styled from 'styled-components';
 import { Button , Container} from '../../globalStyles';
 
 
-export const AboutSec = styled(Container)`
+export const AboutSec = styled.div`
   margin-top : 0;
   color: var(--white);
   padding: 50px 50px;
   background: var(--white);
   max-height : fit-content;
+  max-width : 100vw; 
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  margin-left : 5%;
+  margin-right : 5%;
 `;
 
 export const AboutRow = styled.div`
   display: flex;
-  margin: 0 -15px -15px -15px;
   flex-wrap: wrap;
   align-items: center;
-  flex-direction: ${({ imgStart }) => (imgStart ? 'row-reverse' : 'row')};
+  flex-direction: row-reverse;
+  @media screen and (max-width: 768px) {
+    flex-direction : column-reverse;
+  }
 `;
 
 export const AboutColumn = styled.div`
@@ -26,7 +34,7 @@ export const AboutColumn = styled.div`
   max-width: 50%;
   flex-basis: 50%;
   @media screen and (max-width: 768px) {
-    max-width: 100%;
+    max-width: 100vw;
     flex-basis: 100%;
     display: flex;
     justify-content: center;
@@ -43,26 +51,21 @@ export const TextWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  max-width: 700px;
-  display: flex;
+  display: flex;  
   justify-content: ${({ start }) => (start ? 'flex-start' : 'flex-end')};
-  @media screen and (max-width : 768px){
-    max-width : 1000vw;
-    max-height : 100vh;
+  @media screen and (max-width : 768px){  
   }
 `;
 
 export const Img = styled.img`
-  padding-right: 0;
-  border: 0;
-  max-width: 100%;
   vertical-align: middle;
-  display: inline-block;
-  max-height: 500px;
+  align-items : center;
+  display: flex;
+  justify-content : center;
+  height: 500px;
+  width : 500px;
   @media screen and (max-width : 768px){
-    padding : 25px;
-    max-height: 350px;
-    max-width : 400px;
+
   }
 `;
 
@@ -80,7 +83,7 @@ export const Text = styled.p`
 export const AboutSecButton = styled(Button)`
   padding: ${({ bigger }) => (bigger ? '10px 55px' : '10px 30px')};
   margin-left: 25px;
-  @media screen and (max-width: 960px){
+  @media screen and (max-width: 1268px){
     margin-top: 10px;
     margin-left: 10%;
     width: 80%;

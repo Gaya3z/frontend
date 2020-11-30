@@ -1,8 +1,7 @@
 import React from 'react'
 import { AboutColumn, AboutRow, Img, ImgWrapper } from '../AboutSection/AboutElements'
 import { Form } from '../Footer/FooterElements'
-import { NewsletterBox, 
-    NewsletterContainer, 
+import { NewsletterBox,  
     NewsletterSec, 
     NewsletterText, 
     NewsletterWrapper, 
@@ -17,8 +16,7 @@ import newsletter from '.../../../public/Newsletter.svg'
 function Newsletter() {
     return (
         <NewsletterSec>
-        <NewsletterContainer>
-        <AboutRow>
+        <AboutRow >
         <AboutColumn>
         <NewsletterWrapper>
         <Title>
@@ -45,8 +43,7 @@ function Newsletter() {
                 <Img src = {img} alt = "Blogs" />
             </ImgWrapper>
         </AboutColumn>
-        </AboutRow>
-        </NewsletterContainer>     
+        </AboutRow>  
         </NewsletterSec>
     )
 }

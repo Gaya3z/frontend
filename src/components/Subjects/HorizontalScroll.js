@@ -67,6 +67,8 @@ export default class HorizontalScroll extends Component {
           onSelect={this.onSelect}
           wheel={false}
           alignCenter={false}
+          scrollBy = {1}
+          alignOnResize = {false}
         />
         <div>
         <div onChange={this.setSelected}>

@@ -16,8 +16,8 @@ import {
 function Cards() {
   return (
       <CardSection>
-        <CardWrapper>
-          <CardContainer>
+        <>
+          <>
             <Card to='/'>
               <CardInfo>
                 <CardIcon>
@@ -59,8 +59,8 @@ function Cards() {
                 </CardText>
               </CardInfo>
             </Card>
-          </CardContainer>
-        </CardWrapper>
+          </>
+        </>
       </CardSection>
   );
 }
