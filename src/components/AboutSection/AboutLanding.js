@@ -8,6 +8,9 @@ import {Link} from 'react-router-dom'
 const ReadBlog = styled(Button)`
   padding: 12px 65px;
   @media screen and (max-width : 1320px) { 
+    padding: 12px 80px; 
+  }
+  @media screen and (max-width : 768px) { 
     padding: 8px 70px; 
   }
 `
