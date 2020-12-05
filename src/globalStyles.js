@@ -19,8 +19,9 @@ export const Title = styled.h1`
   font-weight: bold;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
-  @media screen and (max-width : 768px){
-    font-size : 30px;
+  margin-top : 20px;
+  @media screen and (max-width : 900px){
+    font-size : 28px;
   }
 `
 

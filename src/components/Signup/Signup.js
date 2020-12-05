@@ -1,6 +1,6 @@
-import { Button, Title } from '../../globalStyles'
+import { Button } from '../../globalStyles'
 import React , {Component} from 'react'
-import { CheckBoxArea, Insert, Label, SignupBox, SignupContainer } from './SignupElements'
+import { CheckBoxArea, Insert, Label, SignupBox, SignupContainer, SignupTitle } from './SignupElements'
 import StyledCheckbox from './StyledCheckbox'
 
 
@@ -10,9 +10,9 @@ export default class Signup extends Component {
             <>
             <SignupContainer>
                 <SignupBox>
-                <Title>
+                <SignupTitle>
                     Sign Up
-                </Title>
+                </SignupTitle>
                     <Insert placeholder = "Username" />
                     <Insert placeholder = "E-mail" />
                     <Insert  placeholder = "Password" />

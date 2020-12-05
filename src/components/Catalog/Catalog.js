@@ -11,9 +11,9 @@ import {
 
 function Cards() {
   return (
-      <CatalogSection>
+        <CatalogSection>
         <ListWrapper>
-            <Title>Catalog</Title>
+            <Title>Catalogue</Title>
           <ListContainer>
             <List>
               <Topic>Data Science</Topic>

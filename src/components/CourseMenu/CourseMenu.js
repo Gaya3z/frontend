@@ -1,21 +1,15 @@
-import { Button, ButtonGroup, Popover, makeStyles, Typography, Menu, MenuItem, IconButton } from '@material-ui/core'
+import { Button, ButtonGroup, Popover, makeStyles, Typography} from '@material-ui/core'
 import React from 'react'
 import BreadCrumb from '../BreadCrumbs/BreadCrumb'
 import Btn from '../Button/Btn'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import clsx from 'clsx'
-import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
     root : {
-        height : "50px",
-        alignItems: 'center',
         display : 'flex',
-        justifyContent: 'center',
-        marginRight : "10%",
-        marginLeft : "10%",
-        marginTop : "auto",
+        flexDirection : "column",
         marginBottom : 20,
+        height : "fit-content",
         [theme.breakpoints.down('sm')]: {
             marginLeft : "0%",
             marginRight : "0%",
@@ -25,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
     btn : {
         marginLeft : 'auto',
+        marginBottom : "10px",
         [theme.breakpoints.down('sm')]: {
             marginLeft : 0,
+            marginBottom : "-10px",
           },
     },
     toolbar : {
@@ -69,6 +65,17 @@ const useStyles = makeStyles((theme) => ({
           display: 'none',
         },
       },
+      smallBtn : {
+        height : "25px",
+        width : "125px"
+      },
+      breadcrumb : {
+        display : "flex",
+        alignItems : "center",
+        [theme.breakpoints.down('xs')] : {
+          flexDirection : "column",
+        },
+      },
 }))
 
 function CourseMenu() {
@@ -86,77 +93,76 @@ function CourseMenu() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (<></>);
-
     return (
         <>
-        <div className = {classes.root} >
-        <BreadCrumb />
-        <div className = { classes.btn }>
-            <Btn>Follow</Btn>
-            <Btn>Share List</Btn>
-        </div>
-        </div>
-        <div className = { classes.grow }>
-        <div className = {clsx(classes.root, classes.sectionDesktop)}>
-        <ButtonGroup 
-        size="large" 
-        variant="contained" 
-        color="#E2E6F0" 
-        aria-label="contained primary button group">
-        <Button 
-        aria-describedby={id}
-        className = {classes.filter}
-        endIcon={<ArrowDropDownIcon />} 
-        onMouseOver = {handleClick}>
-        Language
-        </Button>
-        <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-      >
-        <Typography className = {classes.typography}>No Info Available</Typography>
-      </Popover>
-        <Button 
-        aria-describedby={id} onMouseOver ={handleClick}
-        className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
-        Level
-        </Button>
-        <Button 
-        aria-describedby={id} onMouseOver ={handleClick}
-        className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
-        Duration
-        </Button>
-        <Button 
-        aria-describedby={id} onMouseOver ={handleClick}
-        className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
-        Provider
-        </Button>
-        <Button 
-        aria-describedby={id} onMouseOver ={handleClick}
-        className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
-        Start Date 
-        </Button>
-        <Button 
-        aria-describedby={id} onMouseOver ={handleClick}
-        className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
-        Learning Type
-        </Button>
-      </ButtonGroup> 
-        </div>
-        </div>
+       <div className = {classes.root} >
+            <div className = {classes.breadcrumb}>
+            <BreadCrumb />
+            <div className = { classes.btn }>
+                <Btn className = {classes.smallBtn}>Follow</Btn>
+                <Btn className = {classes.smallBtn}>Share List</Btn>
+            </div>
+            </div>
+          <div className = { classes.grow }>
+            <div className = { classes.sectionDesktop} >
+              <ButtonGroup 
+                  size="large" 
+                  variant="contained" 
+                  color="#E2E6F0" 
+                  aria-label="contained primary button group">
+                    <Button 
+                      aria-describedby={id}
+                      className = {classes.filter}
+                      endIcon={<ArrowDropDownIcon />} 
+                      onClick = {handleClick}>
+                      Language
+                    </Button>
+                    <Popover
+                      id={id}
+                      open={open}
+                      anchorEl={anchorEl}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                      }}>
+                      <Typography className = {classes.typography}>
+                        No Info Available
+                      </Typography>
+                    </Popover>
+                  <Button 
+                    aria-describedby={id} onClick ={handleClick}
+                    className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
+                    Level
+                  </Button>
+                  <Button 
+                    aria-describedby={id} onClick ={handleClick}
+                    className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
+                    Duration
+                  </Button>
+                  <Button 
+                    aria-describedby={id} onClick ={handleClick}
+                    className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
+                    Provider
+                  </Button>
+                  <Button 
+                    aria-describedby={id} onClick ={handleClick}
+                    className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
+                    Start Date 
+                  </Button>
+                  <Button 
+                    aria-describedby={id} onClick ={handleClick}
+                    className = {classes.filter} endIcon={<ArrowDropDownIcon />} >
+                    Learning Type
+                  </Button>
+                </ButtonGroup> 
+            </div>
+          </div>
+        </div>  
         </>
     )
 }

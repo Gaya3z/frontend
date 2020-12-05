@@ -60,22 +60,22 @@ const useStyles = makeStyles((theme) => ({
     flexGrow : 1,
   },
   card : {
-    margin : 20,
-    width : "fit-content",
+    margin : 10,
+    maxWidth : '100vw',
     border : "0.5px transparent rgba(0, 0, 0, 0.5)",
     boxSizing : "border-box",
     boxShadow : "4px 4px 25px rgba(0, 0, 0, 0.25)",
     borderRadius : 15,
     padding : 20,
     [theme.breakpoints.down('sm')] : {
-      width : '90vw'
     },
   },
   body : {
     display : "flex",
     flexDirection : "row",
     alignItems : "center",
-    justifyContent : "center"
+    justifyContent : "center",
+    maxWidth : "100vw",
   },
   table: {
     minWidth: 700,
@@ -90,10 +90,10 @@ const useStyles = makeStyles((theme) => ({
     borderRadius : "10px",
     margin : 5,
     justifyContent : "center",
-    [theme.breakpoints.down('sm')] : {
+    [theme.breakpoints.down('xs')] : {
         flexDirection : "column",
         height : "fit-content",
-        width : "80%",
+        width : "90%",
         alignItems : "center",
     },
 },
@@ -103,15 +103,15 @@ section : {
     flexDirection : "column",
     alignItems : "left",
     justifyContent : "center",
-    [theme.breakpoints.down('sm')] : {
-        margin : 10,
+    [theme.breakpoints.down('xs')] : {
+        margin : 10 ,
         alignItems : "center"
     },
 },
 picture : {
     width : 180,
     height : 150,
-    [theme.breakpoints.down('sm')] : {
+    [theme.breakpoints.down('xs')] : {
       width : "100%",
       height : "100%",
   },
@@ -119,9 +119,17 @@ picture : {
 pathTitle : {
     fontSize : 24,
     fontWeight : 600,
+    [theme.breakpoints.down('xs')] : {
+      fontSize : "20px",
+    },
 },
 pathBtn : {
-  marginLeft : "auto"
+  marginLeft : "auto",
+  height : "fit-content",
+  width : "fit-content",
+  [theme.breakpoints.down('xs')] : {
+    fontSize : "12px",
+  },
 },
 sectionDesktop: {
   display: 'none',
@@ -214,23 +222,23 @@ export default function CenteredTabs() {
   return (
     <div className = {classes.body}>
       <div className = {classes.card}>
-      <div className = {classes.sectionDesktop}>
-      <Paper className={classes.root} >
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          aria-label="full width tabs"
-          centered
-        >
-          <Tab label="My Courses" {...a11yProps(0)} />
-          <Tab label="Course Path" {...a11yProps(1)} />
-          <Tab label="Bookmarks" {...a11yProps(2)} />
-          <Tab label="Follows" {...a11yProps(3)} />
-        </Tabs>
-      </Paper>
-      </div>
+        <div className = {classes.sectionDesktop}>
+          <Paper className={classes.root} >
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              aria-label="full width tabs"
+              centered
+            >
+              <Tab label="My Courses" {...a11yProps(0)} />
+              <Tab label="Course Path" {...a11yProps(1)} />
+              <Tab label="Bookmarks" {...a11yProps(2)} />
+              <Tab label="Follows" {...a11yProps(3)} />
+            </Tabs>
+          </Paper>
+        </div>
       <div className = {classes.sectionMobile}>
         {renderMobileView}
       </div>
@@ -279,23 +287,23 @@ export default function CenteredTabs() {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+      </TableContainer>
 
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
         <div className = {classes.body}>
                 <div className = {classes.path}>
                     <div className = {classes.section}>
-                    <img src = {img} className = {classes.picture} alt = "path" />
+                        <img src = {img} className = {classes.picture} alt = "path" />
                     </div>
                     <div className = {classes.section}>
-                    <Typography>
-                        PATH NAME
-                    </Typography>
-                    <Typography className = {classes.pathTitle}>
-                        Lorem Ipsum
-                    </Typography>
-                    <Btn className = {classes.pathBtn}>View Course Path</Btn>
+                      <Typography>
+                          PATH NAME
+                      </Typography>
+                      <Typography className = {classes.pathTitle}>
+                          Lorem Ipsum
+                      </Typography>
+                      <Btn className = {classes.pathBtn}>View Course Path</Btn>
                     </div>
                 </div>
             </div>

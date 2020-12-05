@@ -9,13 +9,22 @@ export const Rating = styled(FaStar)`
     height : 24px;
     color : white;
     padding : 3px;
+    @media screen and (max-width : 1268px){
+      width : 20px;
+      height : 20px;
+      padding : 2;
+    }
 `
 export const RatingSection = styled.div`
+    margin-top : 20px;
     width : fit-content;
     height : fit-content;
     border-radius : 5px;
     background : #afafaf;
-    box-shadow : 0px 4px 10px rgba(125, 125, 125, 0.5);
+    box-shadow : 0px 4px 10px rgba(125, 125, 125, 0.2);
+    @media screen and (max-width : 768px){
+      margin-top : 0px;
+    }
 `
 
 export const TimeIcon = styled(GiSandsOfTime)`

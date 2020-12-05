@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems : "center",
         justifyContent : "center",
         [theme.breakpoints.down('sm')] : {
-            flexDirection : "column-reverse",   
+            flexDirection : "column",   
         },
         },
     section : {
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         padding : 10,
         [theme.breakpoints.down('sm')] : {
             maxWidth : "100vw",
+            marginTop : "20px",
         },
     },
     column : {
@@ -57,9 +58,6 @@ const useStyles = makeStyles((theme) => ({
         color : "var(--grey)",
         textShadow :"5px 4px 4px rgba(0, 0, 0, 0.25)",
         fontWeight : 600,
-        [theme.breakpoints.down('sm')] : {
-            marginTop : 25,  
-        },
     },
     text : {
         textAlign : "center",
@@ -76,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent : "center",
         [theme.breakpoints.down('md')] : {
             flexDirection : "column",
-            margin : -5,
         },
     },
     btn : {

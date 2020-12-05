@@ -19,7 +19,7 @@ function TopCourses() {
     return (
         <>
         <Navbar />
-        <Container className = {classes.container} >
+        <div className = {classes.container} >
         <div className = {styles.root}>
         <Title> Top Courses </Title>
         <Typography className = {classes.typography}>
@@ -36,7 +36,7 @@ function TopCourses() {
             </div>
         </div>
         </div>
-        </Container>
+        </div>
         </>
     )
 }

@@ -34,6 +34,7 @@ export const SearchBar = styled.input`
     @media screen and (max-width: 960px){
         width: 80vw; 
         height : 45px;
+        font-size : 12px;
     }
 `
 

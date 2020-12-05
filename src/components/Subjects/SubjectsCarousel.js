@@ -46,26 +46,27 @@ export class SubjectsCarousel extends Component {
               },
           ]
       };
+      
     return (
         <>
             <Slider {...settings} >
             <CarouselContent>
-                <img src = {imageOne} alt = "imageOne" />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageOne" />
             </CarouselContent>
             <CarouselContent>
-                <img src = {imageOne} alt = "imageTwo"  />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageTwo"  />
             </CarouselContent>
             <CarouselContent>
-                <img src = {imageOne} alt = "imageOne"  />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageOne"  />
             </CarouselContent>
             <CarouselContent>
-                <img src = {imageOne} alt = "imageOne"  />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageOne"  />
             </CarouselContent>
             <CarouselContent>
-                <img src = {imageOne} alt = "imageTwo"  />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageTwo"  />
             </CarouselContent>
             <CarouselContent>
-                <img src = {imageOne} alt = "imageOne"  />
+                <img style = {{ marginRight : "30px" }} src = {imageOne} alt = "imageOne"  />
             </CarouselContent>
         </Slider>
         </>

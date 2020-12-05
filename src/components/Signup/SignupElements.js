@@ -1,4 +1,9 @@
+import { Title } from './../../globalStyles';
 import styled from 'styled-components';
+
+export const SignupTitle = styled(Title)`
+    margin-bottom : 25px;
+`
 
 export const SignupContainer = styled.div`
   background-color: whitesmoke  ; 
@@ -40,10 +45,10 @@ export const Insert = styled.input`
     @media screen and (max-width: 960px){
         width : auto;
         height: auto;
+        font-size : 15px;
     }
 `
 export const Label = styled.label`
-    padding-bottom : 15px;
 `
 export const CheckBox = styled.input`
     border : none;
@@ -57,5 +62,7 @@ export const CheckBoxArea = styled.div`
     flex-direction: row;
     width : auto;
     padding-bottom : 15px;
-
+    display : flex;
+    align-items : center;
+    justify-content : center;
 `

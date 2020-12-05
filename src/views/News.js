@@ -1,19 +1,24 @@
 import { Btn } from './../components'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography, TextField } from '@material-ui/core'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import img from './../assets/img/hero-bg.png'
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+import clsx from 'clsx'
+
 
 const useStyles = makeStyles((theme) => ({
     top : {
-        marginLeft : "15%",
-        marginRight : "15%",
-        maxWidth : 1300,
+        marginLeft : "10%",
+        marginRight : "10%",
+        maxWidth : "100vw",
         width : "100%",
         display : "flex",
         height : 100,
         alignItems : 'center',
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             marginLeft : 0,
             marginRight : 0,
             flexDirection : "column"
@@ -40,12 +45,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent : 'center',
         color : "#2D283E",
         zIndex: 1,
-        width: "100%",
-        maxWidth: "1300px",
-        marginRight: "auto",
-        marginLeft: "auto",
-        paddingRight:"50px",
-        paddingLeft: "50px",
+        maxWidth : "100vw",
+        marginRight: "5%",
+        marginLeft: "5%",
         [theme.breakpoints.down('md')]: {
             paddingLeft : "0%",
             paddingRight : "0%"
@@ -94,6 +96,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
         [theme.breakpoints.down('sm')]: {
           display: 'flex',
+          flexDirection : "column",
+          alignItems : "center",
         },
       },
       sectionDesktop: {
@@ -105,6 +109,13 @@ const useStyles = makeStyles((theme) => ({
       link : {
           textDecoration : "none"
       },
+      search : {
+        display : "flex",
+        marginLeft : "auto",
+        [theme.breakpoints.down('sm')] : {
+            marginLeft : "0px",
+        },
+    },
 }))
 
 export default function News() {
@@ -121,6 +132,20 @@ export default function News() {
             NEWS AND ARTICLES
           </Typography>
         </div>
+        <div className = {clsx(classes.search, classes.sectionMobile)}>
+             <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+          </div>
         </>
     )
     return (
@@ -136,11 +161,27 @@ export default function News() {
           <Typography variant="h1" className = {classes.title} noWrap>
             NEWS AND ARTICLES
           </Typography>
+          <div className = {clsx(classes.search, classes.sectionDesktop)}>
+          <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+          </div>
             </div>
             </div>
             <div className = {classes.sectionMobile}>
             {renderMobileView}
-            </div>
+            
+          
+          </div>
            {[...Array(5)].map(articles => {
                return(
                 <div className = {classes.body}>

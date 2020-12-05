@@ -19,6 +19,7 @@ import MenuList from '@material-ui/core/MenuList';
 import {GoBook} from 'react-icons/go'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import {RiCloseCircleLine} from 'react-icons/ri'
+import { Popover} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
 navsolid : {
@@ -111,6 +112,11 @@ toolbar : {
     height : 20,
     width : 20,
   },
+  trackhover : {
+    padding: theme.spacing(1),
+    color : "var(--grey)",
+    opacity : "0.5",
+  },
 }));
 
   Navbar.propTypes = {
@@ -118,6 +124,7 @@ toolbar : {
   };
 
 export default function Navbar(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const { color, ...other } = props;
   const navclasses = useStyles(props);
 
@@ -172,6 +179,18 @@ export default function Navbar(props) {
 
     setState({ ...state, [anchor]: open });
   };
+
+    const active = Boolean(anchorEl);
+    const id = active ? 'tracks' : undefined;
+    
+
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+
+    const handleFade = () => {
+      setAnchorEl(null);
+    };
 
   const list = (anchor) => (
     <div
@@ -295,7 +314,7 @@ export default function Navbar(props) {
     <Link className = {classes.link} to = "/login">Login</Link>
     </MenuItem>
     <MenuItem>
-    <Link className = {classes.link} to = "/signup">Signup</Link>
+    <Link className = {classes.link} to = "/signup">Sign up</Link>
     </MenuItem>
     </Menu>
   );
@@ -413,7 +432,7 @@ export default function Navbar(props) {
                 </MenuItem>
                 </Link>
                   <MenuItem>
-                  <Link to = "/catalog">View Catalog</Link>
+                  <Link to = "/catalog">View Catalogue</Link>
                   </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
@@ -422,8 +441,32 @@ export default function Navbar(props) {
           )}
         </Popper>
               <MenuItem>
-              <Link className = {classes.link} to = "/customizepage">Tracks</Link>
+              <Link 
+              className = {classes.link} 
+              to = "/customizepage"
+              aria-describedby = "tracks"
+              onMouseOver = {handleClick}>
+                  Tracks
+                </Link>
               </MenuItem>
+              <Popover
+                      id={id}
+                      open={active}
+                      anchorEl={anchorEl}
+                      onMouseOut={handleFade}
+                      onClickAway = {handleFade}
+                      anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                      }}>
+                      <Typography className = {classes.trackhover}>
+                        Coming soon
+                      </Typography>
+                    </Popover>
               <MenuItem>
               <Link className = {classes.link} to = "/blogs">Blogs</Link>
               </MenuItem>
@@ -431,7 +474,7 @@ export default function Navbar(props) {
               <Link className = {classes.link} to = "/login">Login</Link>
               </MenuItem>
               <Btn color = "white">
-              <Link className = {classes.link} to = "/signup">Signup</Link>
+              <Link className = {classes.link} to = "/signup">Sign Up</Link>
               </Btn>
           </div>
           <div className={classes.sectionMobile}> 

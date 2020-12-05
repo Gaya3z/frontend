@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
             marginLeft : "0%",
             marginRight : "0%",
             flexDirection : "column",
-            marginTop : '5%',
           },
     },
     btn : {

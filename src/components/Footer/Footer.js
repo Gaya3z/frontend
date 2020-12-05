@@ -24,12 +24,14 @@ import {
   SocialMediaWrap,
   SocialIcons,
   SocialIconLink,
-  HorizontalLine
+  HorizontalLine,
+  useStyles
 } from './FooterElements';
 import coursenator from '.../../../public/FooterLogo.svg'
+import Menu from './Menu';
 
 function Footer() {
-  
+  const classes = useStyles()
   return (
     <FooterContainer>
       <FooterSubscription>
@@ -51,6 +53,10 @@ function Footer() {
             Lorem ipsum dolor sit amet, fabulas molestiae nam ad, eos an sonet deleniti volutpat. Mel sonet persecuti complectitur ut. 
             </FooterSubText>
           </FooterLinkItems>
+          <div className = {classes.sectionMobile}>
+            <Menu />
+          </div>
+          <div className = {classes.sectionDesktop}>
           <FooterLinkItems>
             <FooterLink to='/about'>About Us</FooterLink>
             <FooterLink to='/blogs'>Blogs</FooterLink>
@@ -75,6 +81,7 @@ function Footer() {
             <FooterLink to='/'>Free certificate courses</FooterLink>
             <FooterLink to='/'>Online MBA from top B-Schools</FooterLink>
           </FooterLinkItems>
+          </div>
         </FooterLinksWrapper>
       </FooterLinksContainer>
       <HorizontalLine />

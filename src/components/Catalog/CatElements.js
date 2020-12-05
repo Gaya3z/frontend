@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const CatalogSection = styled.div`
-  padding: 0 0 50px;
   display: flex;
   flex-direction: column;
+  align-items : center;
   justify-content: center;
   background : whitesmoke;
+  margin-top : 80px;
+  width : 100vw;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ListWrapper = styled.div`
@@ -21,9 +27,7 @@ export const ListWrapper = styled.div`
 
 export const ListContainer = styled.div`
   display: flex;
-  flex-direction : row ;
   align-items : flex-start;
-  margin-left : 8%;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: center;
@@ -67,5 +71,8 @@ export const Item = styled(Link)`
     :hover{
         transform: scale(1.01);
         transition: all 0.1s;
+    }
+    @media screen and (max-width : 768px){
+      text-shadow : 0;
     }
 `

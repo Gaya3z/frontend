@@ -1,6 +1,6 @@
-import { Container, Title } from '../globalStyles'
+import { Title } from '../globalStyles'
 import React from 'react'
-import { Navbar , CourseCard, CourseMenu, Btn } from '../components'
+import { Navbar , CourseCard, CourseMenu, Btn, Treeview } from '../components'
 import {  Typography } from '@material-ui/core'
 import { SearchBar } from '../components/HeroSection/HeroSecElements'
 import {Link} from 'react-router-dom'
@@ -13,7 +13,7 @@ export default function CourseList() {
     return (
         <>
         <Navbar />
-        <Container className = {classes.container} >
+        <div className = {classes.container} >
         <Title> Course Name </Title>
         <Typography className = {classes.typography}>
         Lorem ipsum dolor sit amet, consectetur 
@@ -33,30 +33,35 @@ export default function CourseList() {
         </Typography>
         </div>
         <div className = {classes.coursecard}>
-                <div className = {classes.menulist}>
+            <div className = {classes.sectionMobile}>
+                <Treeview />
+            </div>
+            <div className = {clsx(classes.menulist, classes.sectionDesktop)}>
                 <Typography 
-                class = {classes.link}
-                style = {{ fontWeight : '600' , color : "#000" }}>
-                Related courses
+                    class = {classes.link}
+                    style = {{ fontWeight : '600' , color : "#000" }}>
+                    Related courses
                 </Typography>
-                <Link className = {classes.link} >Data Visualization</Link>
-                <Link className = {classes.link} >Data Analysis</Link>
-                <Link className = {classes.link} >Data Mining</Link>
-                <Link className = {classes.link} >Big Data</Link>
-                <Link className = {classes.link} >Bio Informatics</Link>
-                <Link 
-                className = {clsx(classes.cataloglink , classes.link)} 
-                to = "/catalog">
-                View Catalog
-                </Link>
-                </div>
-            <div>
+                    <Link className = {classes.link} >Data Visualization</Link>
+                    <Link className = {classes.link} >Data Analysis</Link>
+                    <Link className = {classes.link} >Data Mining</Link>
+                    <Link className = {classes.link} >Big Data</Link>
+                    <Link className = {classes.link} >Bio Informatics</Link>
+                    <Link 
+                    className = {clsx(classes.cataloglink , classes.link)} 
+                    to = "/catalog">
+                    View Catalogue
+                    </Link>
+            </div>
+            
+        <div>
             {[...Array(10)].map(coursecard => {
             return <CourseCard />
             })} 
             </div>
         </div>
-        </Container>
+        <Link style = {{ marginBottom : "25px" }}>Load more</Link>
+        </div>
         </>
     )
 }

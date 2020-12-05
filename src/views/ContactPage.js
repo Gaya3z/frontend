@@ -1,10 +1,13 @@
 import { Container, Title } from './../globalStyles'
 import React from 'react'
 import { Btn, Navbar } from './../components'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography, TextField} from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { SocialIconLink, SocialIcons, SocialMediaWrap } from './../components/Footer/FooterElements';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram, FaTwitter } from 'react-icons/fa';
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
     text : {
@@ -48,6 +51,15 @@ const useStyles = makeStyles((theme) => ({
         width : "80%",
         textAlign : "center",
     },
+    search : {
+        display : "flex",
+        maxWidth : "100vw",
+        alignItems : "center",
+        justifyContent : "right",
+        [theme.breakpoints.down('sm')] : {
+            justifyContent : "center",
+        },
+    },
 }))
 
 export default function ContactPage() {
@@ -56,6 +68,20 @@ export default function ContactPage() {
         <>
         <Navbar />
         <Container>
+        <div className = {classes.search}>
+            <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+            </div>
             <Title>
                 Contact Us
             </Title>

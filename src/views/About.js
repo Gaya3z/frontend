@@ -1,7 +1,10 @@
-import { Navbar } from './../components'
-import { Container , Title } from './../globalStyles'
-import { makeStyles, Typography } from '@material-ui/core'
+import { Navbar} from './../components'
+import { Container , Title} from './../globalStyles'
+import { makeStyles, TextField, Typography } from '@material-ui/core'
 import React from 'react'
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
 
 const Styles = makeStyles((theme) => ({
     conatiner : {
@@ -16,6 +19,15 @@ const Styles = makeStyles((theme) => ({
         maxWidth : '100vw',
         margin : 'auto' ,
     },
+    search : {
+        display : "flex",
+        maxWidth : "100vw",
+        alignItems : "center",
+        justifyContent : "right",
+        [theme.breakpoints.down('sm')] : {
+            justifyContent : "center",
+        },
+    },
 }))
 
 export default function About() {
@@ -24,6 +36,20 @@ export default function About() {
         <>
         <Container className = {classes.conatiner}>
             <Navbar />
+            <div className = {classes.search}>
+            <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+            </div>
             <Title>
                 About Us
             </Title>

@@ -78,7 +78,7 @@ function CustomizePage() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor ornare nisi vehicula malesuada. 
                 Morbi rhoncus est ac ipsum euismod, id varius erat cursus.
                 </Typography>
-                <Link to = "/customizenow">
+                <Link to = "/signup">
                 <Btn>
                     Customize now
                     <PlayArrowIcon />

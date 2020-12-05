@@ -11,13 +11,18 @@ const useStyles = makeStyles((theme) => ({
         boxShadow : "4px 4px 20px rgba(0, 0, 0, 0.15)",
         borderRadius : "100px",
         margin : 10,
+        [theme.breakpoints.down('sm')] : {
+            width : 120,
+            height : 120,
+        },
     },
     body : {
-        maxWidth : 1200,
-        width : "100%",
+        maxWidth : "100vw",
         display : "flex",
         flexDirection : "column",
         alignItems : "center",
+        marginLeft : "5%",
+        marginRight : "5%",
     },
     courseDetails : {
         display : "flex",
@@ -102,7 +107,7 @@ export default function Profile() {
                 <Typography>0 Reviews</Typography>
                 </div>
             </div>
-            <Tab />
+                <Tab />
             <div className = {classes.recommend}>
             <Typography className = {classes.recommendTitle}>
                 Courses Recommended for you :

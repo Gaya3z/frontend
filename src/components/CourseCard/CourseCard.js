@@ -1,122 +1,149 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import Btn from './../Button/Btn'
-import img from './../../assets/img/hero-bg.png'
+import { makeStyles, Typography } from '@material-ui/core'
+import React from 'react'
 import {Link} from 'react-router-dom'
-import { CardSection, EyeIcon, TimeIcon, Action, Rating, RatingSection } from './CourseCardElements';
+import Btn from '../Button/Btn'
+import img from './../../assets/img/hero-bg.png'
+import {GiSandsOfTime} from 'react-icons/gi'
+import {FaRegEye} from 'react-icons/fa'
+import ReadOnly from '../StarRating/ReadOnly';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      maxWidth: 900,
-      maxHeight: "fit-content",
-      display : "flex",
-      borderRadius : 15,
-      [theme.breakpoints.down('sm')] : {
-        height : 'fit-content',
+    card : {
+        display : "flex",
+        height : "fit-content",
+        boxSizing : "border-box",
+        boxShadow : "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        borderRadius : "10px",
+        marginBottom : "20px",
+        border : "1px solid rgba(0, 0, 0, 0.2)" ,
+        [theme.breakpoints.down('768')] : {
+            alignItems : "center",
+        },
+        [theme.breakpoints.down('xs')] : {
+            flexDirection : "column",
+            alignItems : "center"
+        },
+      },
+    section : {
+        display : "flex",
         flexDirection : "column",
-        alignItems : "center",
-        width : "90%",
-      },
+        margin : "20px",
+        justifyContent : "center",
+        [theme.breakpoints.down('1268')] : {
+            marginRight : "5px",
+            margin : "5px",
+        },
+        [theme.breakpoints.down('sm')] : {
+            paddingRight : "10px",
+            paddingLeft : "10px",
+        },
     },
-    cardmedia : {
-      height: 180,
-      width : 330,
-      [theme.breakpoints.down('sm')] : {
-        height : '30vh',
-        width : 'auto',
-        justifyContent : 'center',
-      },
+    img : {
+        width : "165px",
+        height : "165px",
+        borderRadius : "5px",
+        padding : "2px",
     },
-    content : {
-        flex : '1 0 auto'
-    },
-    content2 : {
-        padding : 5,
-    },
-    link : {
-      color : "#777",
-      textDecoration : 'none',
-      fontSize : '14px',
-      '&:hover' : {
-        color : '#5C0090',
-      },
+    icon : {
+        color : "var(--primary)",
+        width : "24px",
+        height : "24px",
     },
     title : {
-      color : "#000",
-      textDecoration : "none",
-      '&:hover' : {
-        color : "#5C0090"
-      },
+        fontSize : "24px",
+        textDecoration : "none",
+        fontWeight : 500,
+        color : "#000" ,
+        '&:hover' : {
+            color : "var(--primary)",
+        },
+        [theme.breakpoints.down('md')] : {
+            fontSize : "20px",
+        },
     },
-  }));  
+    links : {
+        textDecoration : "none",
+        color : "var(--grey)",
+        marginBottom : "5px",
+        '&:hover' : {
+            color : "var(--primary)",
+        },
+        [theme.breakpoints.down('md')] : {
+            fontSize : "14px",
+        },
+    },
+    iconSec : {
+        display : "flex",
+    },
+    ratingSec : {
+        display : "flex",
+        flexDirection : "column",
+        alignItems : "center",
+        justifyContent : "center",
+        margin : "20px",
+        marginLeft : 0,
+        width : "fit-content",
+        [theme.breakpoints.down('sm')] : {
+            marginBottom : "0px",
+        }
+    },
+    btn : {
+        fontSize : "14px",
+        padding : "2px 10px",
+        height : "fit-content",
+        width : "fit-content",
+        marginBottom : "auto",
+        [theme.breakpoints.down('sm')] : {
+            marginTop : " -25px",
+            marginBottom : "10px"
+        },
+    },
+}))
 
 export default function CourseCard() {
-    
-    const classes = useStyles();
-
-  return (
-    <CardSection>
-    <Card className={classes.root}>
-    <CardMedia
-          className = {classes.cardmedia}
-          component="img"
-          alt="Course Image"
-          height="fit-content"
-          image={img}
-          title="Course Name"
-          width = "200px"
-        />
-        <CardContent className = {classes.content}>
-          <Link className = {classes.title} to = "/product">
-          <Typography gutterBottom variant="h5" component="h2">
-            Introduction to Data Visualization
-          </Typography>
-          </Link>
-          <Typography variant="body2" color="textSecondary" component="p">
-           University of California, Davis
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-           Provider : Coursera
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            <TimeIcon />
-            4-6 hours a week / 4 weeks long
-          </Typography>
-            <EyeIcon />
-            <Link className = {classes.link} to = "/product">
-              Course Preview
-              </Link>
-        </CardContent>
-      <CardActions>
-        <Action>
-        <div className = {classes.content2}>
-        <Btn>
-            Share Course
-        </Btn>
-        </div>
-        <div className = {classes.content2}>
-        <Typography variant = "h3">
-            Type :
-        </Typography>
-        <Typography variant ="h3" color = "primary">
-            FREE
-        </Typography>
-        </div>
-        <div className = {classes.content2}>
-            <RatingSection>
-            {[...Array(5)].map(rating => {
-            return <label><Rating /></label>
-            })}
-            </RatingSection>
-        </div>
-        </Action>
-      </CardActions>
-    </Card>
-    </CardSection>
-  );
+    const classes = useStyles()
+    return (
+        <>
+            <div className = {classes.card}>
+                <div className = {classes.section}>
+                    <img src = {img} className = {classes.img} alt = "course" />
+                </div>
+                <div className = {classes.section}>
+                    <Typography>
+                        <Link to = "/product" className = {classes.title}>
+                            Introduction to Data Visualization
+                        </Link>
+                    </Typography>
+                    <Typography className = {classes.links}>
+                        University Name
+                    </Typography>
+                    <Typography className = {classes.links}>
+                        Provider name
+                    </Typography>
+                    <div className = {classes.iconSec}>
+                        <div className = {classes.icon}>
+                            <GiSandsOfTime />
+                        </div>
+                        <Typography className = {classes.links}>
+                            Course Duration
+                        </Typography>
+                    </div>
+                    <div className = {classes.iconSec}>
+                        <div className = {classes.icon}>
+                            <FaRegEye />
+                        </div>
+                        <Link className = {classes.links}>
+                            Course Preview
+                        </Link>
+                    </div>
+                </div>
+                <div className = {classes.ratingSec}>
+                    <Btn className = {classes.btn}>
+                        Share Course
+                    </Btn>
+                    <ReadOnly />
+                </div>
+            </div>
+        </>
+    )
 }

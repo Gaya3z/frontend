@@ -1,7 +1,10 @@
 import { Navbar } from '../components'
 import React from 'react'
 import { Container, Title } from '../globalStyles'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography, TextField } from '@material-ui/core'
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
     question : {
@@ -29,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
             width : "100%",
         },
     },
+    search : {
+        display : "flex",
+        maxWidth : "100vw",
+        alignItems : "center",
+        justifyContent : "right",
+        [theme.breakpoints.down('sm')] : {
+            justifyContent : "center",
+        },
+    },
 }))
 
 export default function Faq() {
@@ -37,6 +49,21 @@ export default function Faq() {
         <>
             <Navbar />
             <Container>
+                
+            <div className = {classes.search}>
+                    <TextField
+                        label="Search"
+                        InputProps={{
+                            endAdornment: (
+                            <InputAdornment>
+                                <IconButton>
+                                <SearchIcon />
+                                </IconButton>
+                            </InputAdornment>
+                            )
+                        }}
+                        />
+                    </div>
                 <Title>
                     FAQs
                 </Title>

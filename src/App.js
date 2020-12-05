@@ -21,7 +21,8 @@ import { Home,
   CustomizePage,
   Customize,
   Recommend,
-  TopCourses} from './views';
+  TopCourses,
+  ProductPage} from './views';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './ScrollToTop';
@@ -50,7 +51,7 @@ function App() {
           <Course />
         </Route>
         <Route path = "/product">
-          <Product />
+          <ProductPage />
         </Route>
         <Route path = "/university">
           <University />

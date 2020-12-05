@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 import { FaMagento } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
+
+export const useStyles = makeStyles((theme) => ({
+  sectionDesktop : {
+    display : "flex",
+    [theme.breakpoints.down('md')] : {
+      display : "none"
+    },
+  },
+  sectionMobile : {
+    display : "none",
+    [theme.breakpoints.down('md')] : {
+      display : "flex",
+    },
+  },
+}))
 
 export const FooterContainer = styled.div`
   background-color: #101522;
@@ -21,7 +37,7 @@ export const FooterSubscription = styled.section`
   margin-bottom: 24px;
   padding: 24px;
   color: #fff;
-  @media screen and (max-width : 980px){
+  @media screen and (max-width : 900px){
   margin-bottom: 12px;
   padding: 12px;
   }
@@ -30,9 +46,9 @@ export const FooterSubscription = styled.section`
 export const FooterSubHeading = styled.p`
   margin-bottom: 24px;
   font-size: 24px;
-  @media screen and (max-width : 980px){
+  @media screen and (max-width : 900px){
     align-items : center;
-    font-size : 20px;
+    font-size : 18px;
   }
 `;
 
@@ -44,7 +60,8 @@ export const Form = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 768px) {
+  border : 1px ;
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     width: 80%;
   }
@@ -57,11 +74,12 @@ export const FormInput = styled.input`
   outline: none;
   border: none;
   font-size: 16px;
-  border: 1px solid #fff;
+  border: 1px solid var(--primary);
   &::placeholder {
     color: #242424;
+    font-size : 12px;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     width: 100%;
     margin: 0 0 16px 0;
   }
@@ -72,14 +90,14 @@ export const FooterLinksContainer = styled.div`
   max-width: 1000px;
   display: flex;
   justify-content: center;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     padding-top: 32px;
   }
 `;
 
 export const FooterLinksWrapper = styled.div`
   display: flex;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     align-items : center;
   }
@@ -94,7 +112,7 @@ export const FooterLinkItems = styled.div`
   width: 240px;
   box-sizing: border-box;
   color: #fff;
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 900px) {
     margin: 0;
     padding: 10px;
     width: 80%;
@@ -106,7 +124,7 @@ export const FooterLinkTitle = styled(Link)`
   margin-bottom: 16px;
   text-decoration  : none;
   color : white;
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 900px) {
     font-size : 14px;
   }
 `;
@@ -119,7 +137,9 @@ export const FooterLink = styled(Link)`
     color: var(--grey);
     transition: 0.3s ease-out;
   }
-  
+  @media screen and (max-width : 600px){
+    font-size : 13px;
+  }
 `;
 
 export const SocialMedia = styled.section`
@@ -134,7 +154,7 @@ export const SocialMediaWrap = styled.div`
   width: 90%;
   max-width: 1000px;
   margin: 40px auto 0 auto;
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
   }
 `;
@@ -173,7 +193,7 @@ export const SocialIcons = styled.div`
   align-items: center;
   width: 280px;
   margin-left: 35%;
-  @media screen and (max-width: 1100px){
+  @media screen and (max-width: 900px){
     margin-right : 37%;
   }
 `;
@@ -181,7 +201,7 @@ export const SocialIcons = styled.div`
 export const SocialIconLink = styled.a`
   color: #fff;
   font-size: 32px;
-  @media screen and (max-width: 1100px){
+  @media screen and (max-width: 900px){
     font-size : 150%;
   }
 `;

@@ -5,16 +5,19 @@ export const Styles = makeStyles((theme) => ({
         color : "#777",
         textAlign : "center",
         maxWidth : 750,
-        margin : "auto",
-        padding : 15,
+        marginTop : "15px",
+        [theme.breakpoints.down('sm')] : {
+            fontSize : "14px",
+            marginRight : "2%",
+            marginLeft : "2%",
+        },
     },
     searcharea : {
         justifyContent : "center",
-        margin : "auto",
         alignItems : "center",
         display : 'flex',
-        [theme.breakpoints.down('sm')]:{
-        flexDirection : "column",
+        [theme.breakpoints.down('sm')] : {
+            maxWidth : '90vw',
         },
     },
     related : {
@@ -23,7 +26,7 @@ export const Styles = makeStyles((theme) => ({
     coursecard : {
         display : 'flex',
         flexDirection  : "row",
-        [theme.breakpoints.down('500')] : {
+        [theme.breakpoints.down('sm')] : {
             flexDirection : "column",
         },
     },
@@ -35,7 +38,7 @@ export const Styles = makeStyles((theme) => ({
         boxSizing: "border-box",
         textDecoration: "none",
         padding : "0 20px",
-        [theme.breakpoints.down('500')] : {
+        [theme.breakpoints.down('sm')] : {
             textAlign : "center",
             margin : "auto",
         },
@@ -59,15 +62,37 @@ export const Styles = makeStyles((theme) => ({
         flexDirection : "row",  
         marginLeft : "auto",
         marginRight : "10%",
-        [theme.breakpoints.down('500')] : {
+        [theme.breakpoints.down('sm')] : {
             margin : "auto",
         },
     },
     container : {
-        marginTop : 100,
+        marginTop : "100px",
+        maxWidth : "100vw",
+        marginRight : "12%",
+        marginLeft : "7%",
+        alignItems : "center",
+        justifyContent : "center",
+        display : "flex",
+        flexDirection : "column",
+        [theme.breakpoints.down('sm')] : {
+            marginLeft : "2%",
+            marginRight : "2%",
+        },
     },
     order : { 
         display : "flex",
-        
+    },
+    sectionMobile : {
+        display : "none",
+        [theme.breakpoints.down('sm')] : {
+            display : "flex",
+        },
+    },
+    sectionDesktop : {
+        display : "flex",
+        [theme.breakpoints.down('sm')] : {
+            display : "none",
+        },
     },
 }))

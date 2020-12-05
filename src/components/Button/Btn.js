@@ -17,7 +17,8 @@ const Btn = styled(({ color, ...other }) => <Button {...other} />)({
   height: 40,
   padding: '0 30px',
   margin: 8,
-  fontWeight : 600
+  fontWeight : 600,
+  textTransform : "none",
 });
 
 export default Btn

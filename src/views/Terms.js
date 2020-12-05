@@ -1,7 +1,11 @@
 import { Navbar } from './../components'
 import React from 'react'
 import { Title, Container } from './../globalStyles'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, Typography, TextField } from '@material-ui/core'
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+
 
 const useStyles = makeStyles((theme) => ({
     typography : {
@@ -9,6 +13,15 @@ const useStyles = makeStyles((theme) => ({
         padding : 10,
         marginTop : 10,
         marginBottom : 20,
+    },
+    search : {
+        display : "flex",
+        maxWidth : "100vw",
+        alignItems : "center",
+        justifyContent : "right",
+        [theme.breakpoints.down('sm')] : {
+            justifyContent : "center",
+        },
     },
 }))
 
@@ -18,6 +31,20 @@ export default function Terms() {
         <>
         <Navbar />
         <Container>
+        <div className = {classes.search}>
+            <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+            </div>
             <Title>
             Terms and Conditions
             </Title>

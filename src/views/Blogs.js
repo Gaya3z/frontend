@@ -1,23 +1,26 @@
 import { Btn } from './../components'
 import { SearchBar } from './../components/HeroSection/HeroSecElements'
-import { makeStyles, Typography } from '@material-ui/core'
+import { makeStyles, TextField ,Typography } from '@material-ui/core'
 import React from 'react'
 import {  Title } from './../globalStyles'
 import {Link} from 'react-router-dom'
 import img from './../assets/img/blog-placeholder.svg'
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+import clsx from 'clsx'
 
 const useStyles = makeStyles((theme) => ({
     top : {
-        marginLeft : "15%",
-        marginRight : "15%",
-        maxWidth : 1300,
-        width : "100%",
+        marginLeft : "10%",
+        marginRight : "10%",
+        maxWidth : "100vw",
         display : "flex",
         height : 100,
         alignItems : 'center',
         [theme.breakpoints.down('md')]: {
-            marginLeft : 0,
-            marginRight : 0,
+            marginLeft : "2%",
+            marginRight : "2%",
           },
     },
     title : {
@@ -41,12 +44,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent : 'center',
         color : "#2D283E",
         zIndex: 1,
-        width: "100%",
-        maxWidth: "1300px",
-        marginRight: "auto",
-        marginLeft: "auto",
-        paddingRight:"50px",
-        paddingLeft: "50px",
+        maxWidth: "100vw",
+        marginRight: "5%",
+        marginLeft: "5%",
         [theme.breakpoints.down('md')]: {
             paddingLeft : "0%",
             paddingRight : "0%"
@@ -97,6 +97,25 @@ const useStyles = makeStyles((theme) => ({
     link : {
         textDecoration: "none",
     },
+    search : {
+        display : "flex",
+        marginLeft : "auto",
+        [theme.breakpoints.down('sm')] : {
+            justifyContent : "center",
+        },
+    },
+    sectionDesktop : {
+        display : "flex",
+        [theme.breakpoints.down('768')] : {
+            display : "none",
+        },
+    },
+    sectionMobile : {
+        display : "none",
+        [theme.breakpoints.down('768')] : {
+            display : "flex",
+        },
+    },
 }))
 
 export default function Blogs() {
@@ -114,9 +133,37 @@ export default function Blogs() {
           <Typography variant="h1" className = {classes.title} noWrap>
             BLOG
           </Typography>
+          <div className = {clsx(classes.search, classes.sectionDesktop)}>
+          <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+          </div>
             </div>
+            <div className = {clsx(classes.search, classes.sectionMobile)}>
+             <TextField
+                label="Search"
+                InputProps={{
+                    endAdornment: (
+                    <InputAdornment>
+                        <IconButton>
+                        <SearchIcon />
+                        </IconButton>
+                    </InputAdornment>
+                    )
+                }}
+                />
+          </div>
             <div className = {classes.body}>
-                <Title>Coursenator Newsletter</Title>
+                <Title>Bloginator</Title>
             <Typography className = {classes.subtext}> 
             Subsribe to our Coursenator NewsLetter for the latest updates on Online Education news and articles 
             </Typography>
@@ -147,6 +194,7 @@ export default function Blogs() {
                         </>
                     )
                 })}
+                <Link style = {{ marginBottom : "25px" }}>Load more</Link>
             </div>
         </div>
         </>
