@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         margin : 10,
         justifyContent : "center",
         [theme.breakpoints.down('sm')] : {
-            flexDirection : "column",   
+            flexDirection : "column-reverse",   
         },
     },
     section : {
