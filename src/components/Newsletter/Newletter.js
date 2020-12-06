@@ -103,6 +103,18 @@ const useStyles = makeStyles((theme) => ({
         alignItems : "center",
         justifyContent : "center",
     },
+    mobile : {
+        display : "none",
+        [theme.breakpoints.down('sm')] : {
+            display : "flex",
+        },
+    },
+    desktop : {
+        display : "flex",
+        [theme.breakpoints.down('sm')] : {
+            display : "none",
+        },
+    },
 }))
 
 export default function Newletter() {
@@ -111,7 +123,7 @@ export default function Newletter() {
         <>
             <div className = {classes.root}>
                 <div className = {classes.section}>
-                    <Title>Get all latest news and articles</Title>
+                    <Title className = {classes.desktop}>Get all latest news and articles</Title>
                     <div className = {classes.box} >
                         <Typography variant = "h1" className = {classes.title}>
                             Coursenator Newsletter
@@ -126,6 +138,7 @@ export default function Newletter() {
                     </div>
                 </div>
                 <div className = {classes.section}>
+                    <Title className = {classes.mobile}>Get all latest news and articles</Title>
                     <img className = {classes.img} src = {img} alt = "placeholder" />
                 </div>
             </div>
