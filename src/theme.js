@@ -18,7 +18,7 @@ export const theme = createMuiTheme({
             fontSize : 36,
             fontFamily : "Skranji",
             fontWeight : "500",
-            textShadow: '0 4 4rem rgba(0, 0, 0, .25)'
+            textShadow: '0 4 4rem rgba(0, 0, 0, .25)',
         },
         p : {
             fontsize : 14,

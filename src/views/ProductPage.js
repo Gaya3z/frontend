@@ -171,10 +171,11 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     overviewSubsection : {
-        paddingRight : "20px",
+        marginLeft : "35px" ,
         [theme.breakpoints.down('sm')] : {
             paddingRight : "0px",
             marginBottom : "25px",
+            marginLeft : "0px",
         },
     },
     detailSection : {
@@ -384,6 +385,9 @@ const useStyles = makeStyles((theme) => ({
             display : "flex"
         },
     },
+    oversub : {
+        marginLeft : "0px",
+    },
 }))
 
 export default function ProductPage() {
@@ -441,7 +445,7 @@ export default function ProductPage() {
                     </div>
                 </div>
                 <div className = {classes.overviewSection}>
-                    <div className = {classes.overviewSubsection}>
+                    <div className = {clsx(classes.overviewSubsection, classes.oversub)}>
                         <Typography variant = "h4">
                             Overview
                         </Typography>

@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
           },
     },
     title : {
-        color : "#5C0090",
+        color : "var(--primary)",
         [theme.breakpoints.down('sm')]: {
-            fontSize : 32,
+            fontSize : 25,
             margin : 5,
           },
     },
@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
         height: 32.5,
         marginRight : 15,
         marginLeft : 15,
+        [theme.breakpoints.down('sm')]: {
+            height : 20,
+            marginRight : 7,
+            marginLeft : 4,
+          },
     },
     body : {
         display : "flex",
@@ -116,6 +121,9 @@ const useStyles = makeStyles((theme) => ({
             display : "flex",
         },
     },
+    blogtitle : {
+        textAlign : "center",
+    },
 }))
 
 export default function Blogs() {
@@ -125,12 +133,12 @@ export default function Blogs() {
         <div>
             <div className = {classes.top} >
             <Link to = "/" className = {classes.link}>
-            <Typography variant="h1" className = {classes.title} noWrap>
+            <Typography className = {classes.title} variant="h1" noWrap>
             COURSENATOR
           </Typography>
           </Link>
           <div className = {classes.vr} />
-          <Typography variant="h1" className = {classes.title} noWrap>
+          <Typography className = {classes.title} variant="h1" noWrap>
             BLOG
           </Typography>
           <div className = {clsx(classes.search, classes.sectionDesktop)}>
@@ -176,7 +184,7 @@ export default function Blogs() {
                         <>
                         <div className = {classes.hr} />
                         <div className = {classes.blogpost}>
-                            <Typography variant = "h5" >Lorem ipsum dolor sit amet</Typography>
+                            <Typography variant = "h5" className = {classes.blogtitle} >Lorem ipsum dolor sit amet</Typography>
                             <Typography className = {classes.date}>Date</Typography>
                             <img src = {img} className = {classes.img} alt = "Blog" />
                             <Typography style = {{ width : "80%", textAlign : "left", margin : "10px" }}>

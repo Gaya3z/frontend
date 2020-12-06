@@ -1,8 +1,9 @@
-import { Container, Title } from '../../globalStyles'
+import { Title } from '../../globalStyles'
 import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import {Link} from 'react-router-dom'
 import img from './../../assets/img/logo-placeholder.png'
+import clsx from 'clsx'
 
 const Styles = makeStyles((theme) => ({
     logo : {
@@ -12,24 +13,51 @@ const Styles = makeStyles((theme) => ({
         height : "fit-content",
         alignItems : "center",
         justifyContent : "center",
-        padding : 20,
+        marginRight : "40px",
+        marginBottom : "40px",
+        [theme.breakpoints.down('sm')] : {
+            marginBottom : "20px",  
+        },
     },
     typography : {
         textDecoration : "none",
         color : "#777",
     },
-    conatainer : {
-        width : "1300px",
-        marginTop : 100
+    container : {
+        maxWidth : "100vw",
+        marginTop : "100px",
+        display : "flex",
+        flexDirection : "column",
+        alignItems : "center",
+        justifyContent : "center",
+        marginLeft : "5%",
+        marginRight : "5%",
     },
     data : {
       display : 'flex',
       alignItems : 'center',
-      justifyContent : "left" ,
-      margin : 20,
-      [theme.breakpoints.down('sm')] : {
+      marginTop : "20px",
+      [theme.breakpoints.down('xs')] : {
         flexDirection : "column",
       },    
+    },
+    sectionMobile : {
+        display : "none",
+        [theme.breakpoints.down('md')] : {
+            display : "flex",      
+        },
+    },
+    sectionDesktop : {
+        display  :"flex",
+        [theme.breakpoints.down('md')] : {
+            display : "none",
+        },
+    },
+    img : {
+        height : "80px",
+        [theme.breakpoints.down('sm')] : { 
+            height : "60px",
+        },
     },
 }))
 
@@ -37,7 +65,7 @@ export default function University() {
     const classes = Styles()
     return (
         <>
-        <Container className = {classes.container}>
+        <div className = {clsx(classes.container, classes.sectionDesktop)}>
             <Title>
             List of Universities
             </Title>
@@ -46,7 +74,7 @@ export default function University() {
             return (
                 <div className = {classes.logo}>
                     <Link to = "/product">
-                    <img src = {img} height = "80px" alt = "logo"/>
+                    <img src = {img} className = {classes.img} alt = "logo"/>
                     </Link>
                     <Link to = "/product"  className =  {classes.typography}>
                     <Typography>
@@ -62,7 +90,7 @@ export default function University() {
             return (
                 <div className = {classes.logo}>
                     <Link to = "/product">
-                    <img src = {img} height = "80px" alt = "logo"/>
+                    <img src = {img} className = {classes.img} alt = "logo"/>
                     </Link>
                     <Link to = "/product"  className =  {classes.typography}>
                     <Typography>
@@ -78,7 +106,7 @@ export default function University() {
             return (
                 <div className = {classes.logo}>
                     <Link to = "/product">
-                    <img src = {img} height = "80px" alt = "logo"/>
+                    <img src = {img} className = {classes.img} alt = "logo"/>
                     </Link>
                     <Link to = "/product"  className =  {classes.typography}>
                     <Typography>
@@ -94,7 +122,7 @@ export default function University() {
             return (
                 <div className = {classes.logo}>
                     <Link to = "/product">
-                    <img src = {img} height = "80px" alt = "logo"/>
+                    <img src = {img} className = {classes.img} alt = "logo"/>
                     </Link>
                     <Link to = "/product"  className =  {classes.typography}>
                     <Typography>
@@ -105,7 +133,124 @@ export default function University() {
             )
             })}
             </div>
-        </Container>
+        </div>
+        <div className = {clsx(classes.sectionMobile, classes.container)}>
+                <Title>
+                List of Universities
+                </Title>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(2)].map(university => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of University
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+        </div>
         </>
     )
 }

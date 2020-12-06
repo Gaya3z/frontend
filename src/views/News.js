@@ -10,6 +10,11 @@ import clsx from 'clsx'
 
 
 const useStyles = makeStyles((theme) => ({
+    container : {
+        display : "flex",
+        flexDirection : "column",
+        alignItems : "center",
+    },
     top : {
         marginLeft : "10%",
         marginRight : "10%",
@@ -20,14 +25,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems : 'center',
         [theme.breakpoints.down('sm')]: {
             marginLeft : 0,
-            marginRight : 0,
+            marginRight : 0,  
+            marginTop : 20,
             flexDirection : "column"
           },
     },
     title : {
         color : "#5C0090",
         [theme.breakpoints.down('sm')]: {
-            fontSize : 32,
+            fontSize : 25,
             margin : 5,
           },
     },
@@ -62,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow : "4px 4px 10px rgba(0, 0, 0, 0.25)",
         borderRadius : "10px",
         margin : 20,
-        [theme.breakpoints.down('sm')] : {
+        [theme.breakpoints.down('xs')] : {
             flexDirection : "column",
             height : "fit-content",
             width : "80%"
@@ -179,9 +185,9 @@ export default function News() {
             </div>
             <div className = {classes.sectionMobile}>
             {renderMobileView}
-            
           
-          </div>
+             </div>
+             <div className = {classes.container}>
            {[...Array(5)].map(articles => {
                return(
                 <div className = {classes.body}>
@@ -202,6 +208,8 @@ export default function News() {
             </div>
                )
            })}
+           <Link style = {{ marginBottom : "25px"}}>Load more</Link>
+            </div>
         </>
     )
 }

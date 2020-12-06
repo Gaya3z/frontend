@@ -1,38 +1,63 @@
-import { Container, Title } from '../../globalStyles'
+import { Title } from '../../globalStyles'
 import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import {Link} from 'react-router-dom'
+import img from './../../assets/img/logo-placeholder.png'
+import clsx from 'clsx'
 
 const Styles = makeStyles((theme) => ({
-    sec : {
+    logo : {
         display : "flex",
         flexDirection : "column",
         width : "fit-content",
         height : "fit-content",
         alignItems : "center",
         justifyContent : "center",
-        margin : 65 ,
+        marginRight : "40px",
+        marginBottom : "40px",
+        [theme.breakpoints.down('sm')] : {
+            marginBottom : "20px",  
+        },
     },
-    typography :{
+    typography : {
         textDecoration : "none",
         color : "#777",
     },
-    link : {
-        textDecoration : "none",
-        fontSize : 24,
-    },
-    conatainer : {
-        width : "1300px",
-        marginTop : 100
+    container : {
+        maxWidth : "100vw",
+        marginTop : "100px",
+        display : "flex",
+        flexDirection : "column",
+        alignItems : "center",
+        justifyContent : "center",
+        marginLeft : "5%",
+        marginRight : "5%",
     },
     data : {
       display : 'flex',
       alignItems : 'center',
-      justifyContent : "left" ,
-      margin : 20,
-      [theme.breakpoints.down('sm')] : {
+      marginTop : "20px",
+      [theme.breakpoints.down('xs')] : {
         flexDirection : "column",
       },    
+    },
+    sectionMobile : {
+        display : "none",
+        [theme.breakpoints.down('md')] : {
+            display : "flex",      
+        },
+    },
+    sectionDesktop : {
+        display  :"flex",
+        [theme.breakpoints.down('md')] : {
+            display : "none",
+        },
+    },
+    img : {
+        height : "80px",
+        [theme.breakpoints.down('sm')] : { 
+            height : "60px",
+        },
     },
 }))
 
@@ -40,17 +65,20 @@ export default function Languages() {
     const classes = Styles()
     return (
         <>
-        <Container className = {classes.container}>
+        <div className = {clsx(classes.container, classes.sectionDesktop)}>
             <Title>
-            Find course by Languages
+            List of Languages
             </Title>
             <div className = {classes.data}>
             {[...Array(5)].map(Language => {
             return (
-                <div className = {classes.sec}>
-                    <Link to = "/product" className = {classes.typography}>
-                    <Typography className = {classes.link}>
-                        Language
+                <div className = {classes.logo}>
+                    <Link to = "/product">
+                    <img src = {img} className = {classes.img} alt = "logo"/>
+                    </Link>
+                    <Link to = "/product"  className =  {classes.typography}>
+                    <Typography>
+                        Name of Language
                     </Typography>
                     </Link>
                 </div>
@@ -60,10 +88,13 @@ export default function Languages() {
             <div className = {classes.data}>
             {[...Array(5)].map(Language => {
             return (
-                <div className = {classes.sec}>
+                <div className = {classes.logo}>
+                    <Link to = "/product">
+                    <img src = {img} className = {classes.img} alt = "logo"/>
+                    </Link>
                     <Link to = "/product"  className =  {classes.typography}>
-                    <Typography className = {classes.link}>
-                        Language
+                    <Typography>
+                        Name of Language
                     </Typography>
                     </Link>
                 </div>
@@ -73,10 +104,13 @@ export default function Languages() {
             <div className = {classes.data}>
             {[...Array(5)].map(Language => {
             return (
-                <div className = {classes.sec}>
+                <div className = {classes.logo}>
+                    <Link to = "/product">
+                    <img src = {img} className = {classes.img} alt = "logo"/>
+                    </Link>
                     <Link to = "/product"  className =  {classes.typography}>
-                    <Typography className = {classes.link}>
-                        Language
+                    <Typography>
+                        Name of Language
                     </Typography>
                     </Link>
                 </div>
@@ -86,17 +120,137 @@ export default function Languages() {
             <div className = {classes.data}>
             {[...Array(5)].map(Language => {
             return (
-                <div className = {classes.sec}>
+                <div className = {classes.logo}>
+                    <Link to = "/product">
+                    <img src = {img} className = {classes.img} alt = "logo"/>
+                    </Link>
                     <Link to = "/product"  className =  {classes.typography}>
-                    <Typography className = {classes.link}>
-                        Language
+                    <Typography>
+                        Name of Language
                     </Typography>
                     </Link>
                 </div>
             )
             })}
             </div>
-        </Container>
+        </div>
+        <div className = {clsx(classes.sectionMobile, classes.container)}>
+                <Title>
+                List of Universities
+                </Title>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(3)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+                <div className = {classes.data}>
+                {[...Array(2)].map(Language => {
+                return (
+                    <div className = {classes.logo}>
+                        <Link to = "/product">
+                        <img src = {img} className = {classes.img} alt = "logo"/>
+                        </Link>
+                        <Link to = "/product"  className =  {classes.typography}>
+                        <Typography>
+                            Name of Language
+                        </Typography>
+                        </Link>
+                    </div>
+                )
+                })}
+                </div>
+        </div>
         </>
     )
 }

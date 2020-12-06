@@ -112,7 +112,7 @@ const productstyles = makeStyles((theme) => ({
         flexDirection : "column",
         padding : "20px",
         justifyContent : "center",
-        marginLeft : "auto",
+        marginRight : "auto",
         width:"fit-content",
         border : "1px solid rgba(0, 40, 141, 0.25)",
         boxShadow : "0px 4px 4px rgba(0, 0, 0, 0.1)",

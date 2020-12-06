@@ -37,11 +37,12 @@ export class SubjectsCarousel extends Component {
               }
             },
             {
-                breakpoint: 768,
+                breakpoint: 400,
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
                   dots: true,
+                  variableWidth : false,
                 }
               },
           ]

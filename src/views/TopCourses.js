@@ -1,8 +1,9 @@
-import { Container, Title } from '../globalStyles'
+import { Title } from '../globalStyles'
 import React from 'react'
 import { Navbar , CourseCard } from '../components'
 import {  makeStyles, Typography } from '@material-ui/core'
 import { Styles } from '../assets/jss/Styles'
+import clsx from 'clsx'
 
 const useStyles = makeStyles((theme) => ({
     root : {
@@ -10,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection : "column",
         alignItems : 'center',
         justifyContent : "center",
+    },
+    typography : {
+        marginBottom : "20px",
     },
 }))
 
@@ -22,7 +26,7 @@ function TopCourses() {
         <div className = {classes.container} >
         <div className = {styles.root}>
         <Title> Top Courses </Title>
-        <Typography className = {classes.typography}>
+        <Typography className = {clsx(classes.typography, styles.typography)}>
         Lorem ipsum dolor sit amet, consectetur 
         adipiscing elit. Donec lobortis non urna 
         vel feugiat. Sed lectus ante,
